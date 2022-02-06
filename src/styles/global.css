@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+   .pb-safe {
+     padding-bottom: max(5rem,env(safe-area-inset-bottom));
+   }
+
+   .pl-safe {
+      padding-left: max(2rem, env(safe-area-inset-left));
+   }
+
+   .pr-safe {
+      padding-right: max(2rem, env(safe-area-inset-right));
+   }
+
+   .px-safe {
+      padding-left: max(2rem, env(safe-area-inset-left));
+      padding-right: max(2rem, env(safe-area-inset-right));
+   }
+ }
+
+
+html {
+   font-size: 62.5%;
+}
+
+body {
+   @apply bg-neutral-50 dark:bg-black;
+}
+
+*, ::after, ::before {
+   -webkit-font-smoothing: antialiased;
+}
+
+@media screen and (hover: none){
+   .bg-fixed {
+      background-attachment: scroll;
+   }
+}

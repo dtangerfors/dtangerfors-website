@@ -1,11 +1,13 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "dtangerfors-website",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "My website",
+  "version": "1.0.0",
+  "author": "Daniel Tängerfors",
   "dependencies": {
-    "gatsby": "^4.5.4",
+    "@prismicio/react": "^2.0.3",
+    "framer-motion": "^6.2.3",
+    "gatsby": "^4.6.0",
     "gatsby-plugin-gatsby-cloud": "^4.5.2",
     "gatsby-plugin-image": "^2.5.2",
     "gatsby-plugin-manifest": "^4.5.2",
@@ -13,14 +15,20 @@
     "gatsby-plugin-react-helmet": "^5.5.0",
     "gatsby-plugin-sharp": "^4.5.2",
     "gatsby-source-filesystem": "^4.5.2",
+    "gatsby-source-prismic": "^5.2.5",
     "gatsby-transformer-sharp": "^4.5.0",
-    "prop-types": "^15.8.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0"
+    "prop-types": "^15.8.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "react-intersection-observer": "^8.33.1"
   },
   "devDependencies": {
-    "prettier": "^2.5.1"
+    "autoprefixer": "^10.4.2",
+    "gatsby-plugin-postcss": "^5.5.0",
+    "postcss": "^8.4.5",
+    "prettier": "^2.5.1",
+    "tailwindcss": "^3.0.16"
   },
   "keywords": [
     "gatsby"
@@ -37,9 +45,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/dtangerfors/dtangerfors-website"
   }
 }

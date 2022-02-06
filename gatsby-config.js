@@ -1,11 +1,33 @@
+const linkResolver = require('./src/utils/linkResolver')
+
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `Daniel Tängerfors`,
+    description: `A driven and multifaceted frontend developer with a background in design and photography.`,
+    author: `@dtangerfors`,
+    siteUrl: `https://dtangerfors.se/`,
   },
   plugins: [
+    {
+      resolve: 'gatsby-source-prismic',
+      options: {
+        repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
+        linkResolver: (doc) => linkResolver(doc),
+        schemas: {
+          about_page: require('./custom_types/about_page.json'),
+          homepage: require('./custom_types/homepage.json'),
+          privacy_policy: require('./custom_types/privacy_policy.json'),
+          project: require('./custom_types/project.json'),
+          resources: require('./custom_types/resources.json'),
+          blog_post: {},
+          case: {}
+        },
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {
@@ -17,18 +39,17 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    'gatsby-plugin-postcss',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
+        name: `dtangerfors-website`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        // This will impact how browsers show your PWA/website
-        // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
+        background_color: `#000`,
+        theme_color: `#f7f7f7`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/dtangerfors-icon.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
