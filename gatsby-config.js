@@ -15,7 +15,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-prismic',
       options: {
-        repositoryName: 'dtangerforsportfolio',
+        repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
         linkResolver: (doc) => linkResolver(doc),
         schemas: {
           about_page: require('./custom_types/about_page.json'),

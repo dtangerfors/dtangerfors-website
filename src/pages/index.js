@@ -18,47 +18,55 @@ import meta_card from "../images/juice-meta-card.jpg"
 
 // Query
 export const query = graphql`
-  {
-    allPrismicHomepage {
-      edges {
-        node {
-          data {
-            title {
-              text
-            }
-            excerpt {
-              text
-            }
+query IndexPage {
+  allPrismicHomepage {
+    edges {
+      node {
+        data {
+          title {
+            text
           }
-        }
-      }
-    }
-    allPrismicProject {
-      edges {
-        node {
-          data {
-            title {
-              text
-            }
-            subtitle {
-              text
-            }
-            thumbnail {
-              alt
-              copyright
-              url
-            }
-            work_in_progress
-            categories
+          excerpt {
+            text
           }
-          id
-          uid
-          type
-          url
         }
       }
     }
   }
+  allPrismicProject(
+    sort: {fields: first_publication_date, order: DESC}
+    limit: 3
+    filter: {data: {categories: {eq: "Development"}}}
+  ) {
+    edges {
+      node {
+        data {
+          title {
+            text
+          }
+          subtitle {
+            text
+          }
+          thumbnail {
+            alt
+            copyright
+            url
+          }
+          work_in_progress
+          categories
+        }
+        id
+        uid
+        type
+        url
+      }
+      next {
+        first_publication_date
+      }
+    }
+  }
+}
+
 `
 
 const IndexPage = ({ data }) => {
@@ -94,9 +102,6 @@ const IndexPage = ({ data }) => {
           <InnerContainer>
             <div className="grid grid-cols-12 grid-rows-[auto] col-span-full gap-8">
               {projects
-                .filter(
-                  project => project.node.data.categories === "Development"
-                )
                 .map((project, i) => {
                   return (
                     <ProjectCard

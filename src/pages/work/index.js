@@ -12,7 +12,9 @@ import ProjectCard from "../../components/ProjectCard"
 // Query
 export const query = graphql`
   {
-    allPrismicProject {
+    allPrismicProject(
+      sort: {fields: first_publication_date, order: DESC}
+    ) {
       edges {
         node {
           data {
