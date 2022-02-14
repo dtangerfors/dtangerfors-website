@@ -15,9 +15,9 @@ const Header = ({ siteTitle }) => {
 
   return (
     <header className="sticky flex justify-between top-0 left-0 w-full z-50">
-      <div className="flex justify-end items-center w-full p-4 pl-safe pr-0 lg:px-4 lg:pr-0 backdrop-blur-md bg-neutral-50/70 border-b border-neutral-900/10 dark:bg-black/70 dark:border-white/30">
+      <div className="flex justify-end items-center w-full p-2 pl-safe pr-0 lg:px-4 lg:pr-0 backdrop-blur-md bg-neutral-50/70 border-b border-neutral-900/10 dark:bg-black/70 dark:border-white/30">
         <Link to="/" className="m-0 mr-auto rounded-full text-0">
-          <svg className="w-8 md:w-12 fill-neutral-900 dark:fill-neutral-50" viewBox="0 0 283.5 283.5">
+          <svg className="w-12 fill-neutral-900 dark:fill-neutral-50" viewBox="0 0 283.5 283.5">
             <path
               d="M237.5,38.2c-57.2-52.4-146.5-48.8-198.9,8c-52.6,56.9-49,146.2,8,198.9l0.1,0.1c28,24.6,60.1,37.1,95.8,37.1
 	c11,0,22.3-1.3,34.2-3.8l3-0.6c2.2-0.4,3.6-2.6,3.2-4.8l-1.3-6.1c-0.6-2.2-2.8-3.6-4.9-3.2l-3,0.6c-44.8,9.1-84.2-1-117.2-30.1
