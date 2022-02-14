@@ -100,7 +100,7 @@ const IndexPage = ({ data }) => {
         </header>
         <Container>
           <InnerContainer>
-            <div className="grid grid-cols-12 grid-rows-[auto] col-span-full gap-8">
+            <div className="grid grid-cols-12 grid-rows-[auto] col-span-full gap-4 md:gap-8">
               {projects
                 .map((project, i) => {
                   return (

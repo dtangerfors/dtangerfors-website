@@ -21,7 +21,7 @@ const ProjectCard = ({ item, index }) => (
           className="w-full h-full object-cover"
         />
       </figure>
-      <div className="flex flex-col justify-end flex-wrap mt-8 pt-4 pb-8 bg-transparent border-t border-neutral-900/10 dark:border-white/30 transition-all duration-300 ease-in-out">
+      <div className="flex flex-col justify-end flex-wrap pt-2 mt-4 md:mt-8 md:pt-4 pb-8 bg-transparent border-t border-neutral-900/10 dark:border-white/30 transition-all duration-300 ease-in-out">
         <h2 className="font-serif text-lg text-black dark:text-white">
           {item.data.title.text}
         </h2>
