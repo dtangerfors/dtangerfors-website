@@ -6,7 +6,7 @@ import Seo from "../../components/seo"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import { Label, Paragraph } from "../../components/typography"
-import { Text, Image, Parallax } from "../../components/slices"
+import { Text, Image, Parallax, Carousel } from "../../components/slices"
 import {
   letterVariants,
 } from "../../components/AnimatedTitle"
@@ -111,6 +111,9 @@ const SliceItems = ({ slices }) => {
 
         case "parallax_image":
           return <Parallax slice={slice} key={index} />
+
+        case "image_carousel":
+          return <Carousel slice={slice} key={index} />
 
         default:
           return
