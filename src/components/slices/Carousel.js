@@ -13,7 +13,7 @@ const Carousel = ({ slice }) => {
     <div className="relative border-y border-neutral-900/10 dark:border-white/30">
       <Container>
         <InnerContainer>
-          <div className="col-span-7 lg:col-start-3">
+          <div className="col-span-7 lg:col-start-4">
             <Swiper
               modules={[Navigation, Pagination, A11y]}
               spaceBetween={10}

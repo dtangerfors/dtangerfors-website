@@ -8,7 +8,7 @@ const Text = ({ slice }) => {
   return (
     <Container>
       <InnerContainer>
-        <div className="col-span-7 lg:col-start-3">
+        <div className="col-span-7 lg:col-start-4">
           <PrismicRichText
             field={slice.primary.text.richText}
             components={htmlSerializer}
