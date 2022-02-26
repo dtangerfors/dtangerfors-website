@@ -7,7 +7,7 @@ import Header from "./header"
 
 const Footer = () => (
   <footer className="p-8 px-safe lg:px-12 xl:px-20">
-    <div className="w-full max-w-screen-2xl border-t border-neutral-900/10 dark:border-white/30">
+    <div className="w-full max-w-screen-2xl border-t border-neutral-900/10 dark:border-white/30 mx-auto">
       <div className="flex items-center justify-between pt-8">
         <div className="flex items-center">
         <Link to="/">
