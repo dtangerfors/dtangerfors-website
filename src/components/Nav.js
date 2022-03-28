@@ -42,8 +42,9 @@ const Nav = ({ open }) => (
       y: open ? 0 : "-100%",
     }}
     transition={{ delay: open ? 0 : 1, type: "tween", duration: 0.4 }}
-    className="fixed inset-0 -z-[1] flex flex-col w-screen h-screen bg-white/80 dark:bg-black/80 backdrop-blur-2xl p-8 pb-safe px-safe lg:p-12 xl:p-20"
+    className="fixed inset-0 -z-[1] w-screen h-screen bg-white dark:bg-black p-8 pb-safe px-safe lg:p-12 xl:p-20"
   >
+    <div className="max-w-screen-2xl mx-auto w-full h-full flex flex-col">
     <ul className="flex flex-col pt-20 lg:pt-40">
       <NavItem
         open={open}
@@ -140,6 +141,7 @@ const Nav = ({ open }) => (
           <span className="pl-2">daniel@dtangerfors.se</span>
         </ContactOption>
       </ContactWrapper>
+    </div>
     </div>
   </motion.nav>
 )
