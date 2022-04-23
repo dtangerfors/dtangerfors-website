@@ -8,6 +8,7 @@ import {
   InnerContainer,
 } from "../../components/site_layout/containers"
 import ProjectCard from "../../components/ProjectCard"
+import GridCard from "../../components/grid_card"
 
 // Query
 export const query = graphql`
@@ -57,9 +58,11 @@ const WorkPage = ({ data }) => {
           <div className="grid grid-cols-12 grid-rows-[auto] col-span-full gap-4 md:gap-8">
           {projects
               .map((project, i) => {
-                return <ProjectCard item={project.node} index={i} key={`project-${i}`} />
+                return <GridCard item={project.node} index={i} key={`project-${i}`} />
               })}
+              
           </div>
+          
           </InnerContainer>
         </Container>
     </Layout>

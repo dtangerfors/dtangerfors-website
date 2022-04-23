@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+   .card {
+      @apply col-span-6 md:col-span-3 overflow-hidden self-end mb-12 lg:mb-40;
+   }
+
+   .card:first-child {
+      @apply col-span-full;
+   }
+
+   .card:nth-child(9n + 2) {
+      @apply md:col-span-6;
+   }
+
+   .card-link {
+      @apply relative flex flex-col;
+   }
+
+   .card-figure {
+      @apply relative w-full pt-[75%];
+   }
+
+   .card:first-child .card-figure {
+      @apply pt-[42.5%] md:pt-[33%];
+   }
+
+   .card-image {
+      @apply absolute w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2;
+   }
+
+   .card-text {
+      @apply relative z-10 flex flex-col justify-end flex-wrap pb-8;
+   }
+}
