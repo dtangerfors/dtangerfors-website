@@ -16,7 +16,7 @@ module.exports = {
       'xl': 'clamp(2rem, 4vw, 2.4rem)',
       '2xl': 'clamp(2.5rem, 4vw, 3.6rem)',
       '3xl': 'clamp(3rem, 4vw, 4.8rem)',
-      'display': 'clamp(3.5rem, 8vw, 9rem)',
+      'display': 'clamp(3.5rem, 8vw, 7rem)',
     },
     extend: {
       maxWidth: {

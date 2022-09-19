@@ -15,6 +15,7 @@ import { ButtonSecondary } from "../components/buttons"
 import ProjectCard from "../components/ProjectCard"
 import aboutImage from "../images/daniel-about-me-image-1500.jpg"
 import meta_card from "../images/juice-meta-card.jpg"
+import bgImage from "../images/website-bg.webp"
 
 // Query
 export const query = graphql`
@@ -83,13 +84,11 @@ const IndexPage = ({ data }) => {
       </Helmet>
       <AnimatePresence>
         <header
-          className="relative flex flex-wrap overflow-hidden border-b border-neutral-900/10 dark:border-white/30 lg:min-h-[70vh] py-20 px-8 lg:py-40 lg:px-12 xl:px-20"
+          className="relative flex flex-wrap overflow-hidden border-b border-neutral-900/10 dark:border-white/30 py-20 px-8 lg:py-40 lg:px-12 xl:px-20 bg-cover"
           key="index-header"
+          style={{backgroundImage: `url(${bgImage})`}}
         >
-          <div className="absolute right-0 bottom-0 w-full h-[40vh] lg:h-full lg:overflow-hidden">
-            <Blob />
-          </div>
-          <div className="flex items-center w-full max-w-screen-2xl mx-auto">
+          <div className="flex items-center w-full max-w-screen-lg">
             <div className="w-full max-w-screen-xl">
               <AnimatedTitle
                 text={homepage.title.text}
