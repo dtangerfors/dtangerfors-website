@@ -31,12 +31,10 @@ export const letterVariants = {
   },
 }
 
-export const AnimatedTitle = props => {
-  const { children, text } = props;
+export const AnimatedTitle = ({ children, text, textSize }) => {
 
   return (
     <motion.h1
-      {...props}
       variants={letterContainerVariants}
       initial={"before"}
       animate={"after"}
@@ -44,7 +42,7 @@ export const AnimatedTitle = props => {
       key={children}
       aria-label={children}
       aria-live={"polite"} // dont do this on production if it loops.
-      className={`${props.textSize} relative inline-block leading-tight font-serif font-thin max-w-full z-10 break-words dark:text-neutral-50`}
+      className={`${textSize} relative inline-block leading-tight font-serif font-thin z-10 break-words dark:text-neutral-50`}
     >
       {text.split(" ").map((word, wordI) => (
         <motion.span
