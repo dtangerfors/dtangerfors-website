@@ -121,7 +121,7 @@ const IndexPage = ({ data }) => {
               className="w-full h-full object-cover object-bottom dark:hidden" 
             >
               <source
-                src="https://files.dtangerfors.se/videos/gradient.mp4"
+                src="https://files.dtangerfors.se/videos/gradient-1.mp4"
                 type="video/mp4"
               />
             </video>
@@ -133,7 +133,7 @@ const IndexPage = ({ data }) => {
               className="w-full h-full object-cover object-bottom hidden dark:block"
             >
               <source
-                src="https://files.dtangerfors.se/videos/gradient-dark.mp4"
+                src="https://files.dtangerfors.se/videos/gradient-1-dark.mp4"
                 type="video/mp4"
               />
             </video>
