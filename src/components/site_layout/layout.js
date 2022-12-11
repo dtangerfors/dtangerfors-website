@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet"
 import Header from "./header"
 
 const Footer = () => (
-  <footer className="p-8 px-safe lg:px-12 xl:px-20">
+  <footer className="p-8 px-safe">
     <div className="w-full max-w-screen-2xl border-t border-neutral-900/10 dark:border-white/30 mx-auto">
       <div className="flex items-center justify-between pt-8">
         <div className="flex items-center">
@@ -54,7 +54,8 @@ const Layout = ({ children }) => {
   return (
     <>
       <Helmet>
-        <link rel="stylesheet" href="https://use.typekit.net/wdd3eii.css" />
+        {/* <link rel="stylesheet" href="https://use.typekit.net/wdd3eii.css" /> */}
+        <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,400,300,900&display=swap" rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"></link>
         <meta
           name="viewport"

@@ -42,7 +42,7 @@ const Nav = ({ open }) => (
       y: open ? 0 : "-100%",
     }}
     transition={{ delay: open ? 0 : 1, type: "tween", duration: 0.4 }}
-    className="fixed inset-0 -z-[1] w-screen h-screen bg-white dark:bg-black p-8 pb-safe px-safe lg:p-12 xl:p-20"
+    className="fixed inset-0 -z-[1] w-screen h-screen bg-white dark:bg-black p-8 pb-safe px-safe"
   >
     <div className="max-w-screen-2xl mx-auto w-full h-full flex flex-col">
     <ul className="flex flex-col pt-20 lg:pt-40">

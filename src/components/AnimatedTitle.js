@@ -31,7 +31,7 @@ export const letterVariants = {
   },
 }
 
-export const AnimatedTitle = ({ children, text, textSize }) => {
+export const AnimatedTitle = ({ children, text, textSize, color }) => {
 
   return (
     <motion.h1
@@ -42,12 +42,12 @@ export const AnimatedTitle = ({ children, text, textSize }) => {
       key={children}
       aria-label={children}
       aria-live={"polite"} // dont do this on production if it loops.
-      className={`${textSize} relative inline-block leading-tight font-serif font-thin z-10 break-words dark:text-neutral-50`}
+      className={`${textSize} ${color} relative inline-block leading-tight font-serif font-light z-10 break-words`}
     >
       {text.split(" ").map((word, wordI) => (
         <motion.span
           key={`word-${word}-${wordI}`}
-          className="relative inline-block w-auto font-thin"
+          className="relative inline-block w-auto"
           // Position elements
           variants={letterVariants}
         >

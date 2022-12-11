@@ -18,7 +18,7 @@ const GridCard = ({ item, index }) => (
         <h2 className="font-serif text-xl text-black dark:text-white">
           {item.data.title.text}
         </h2>
-        <p className="text-sm text-neutral-800 dark:text-neutral-300">
+        <p className="text-sm font-body text-neutral-800 dark:text-neutral-300">
           {item.data.subtitle.text}
         </p>
       </div>

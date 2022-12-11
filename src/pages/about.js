@@ -107,7 +107,7 @@ const AboutPage = ({ data }) => {
               >
                 {about.title.text}
               </Label>
-              <AnimatedTitle text={about.sub_title.text} textSize="text-3xl" />
+              <AnimatedTitle text={about.sub_title.text} textSize="text-3xl" color="text-black dark:text-white" />
               <Ingress
                 variants={fadeUp}
                 initial="hidden"
@@ -202,7 +202,7 @@ const AboutPage = ({ data }) => {
                     <Paragraph className="max-w-prose">
                       {job.job_description.text}
                     </Paragraph>
-                    <time className="inline-block pt-2 text-sm font-body font-normal italic capitalize leading-relaxed text-neutral-500 dark:text-neutral-400">
+                    <time className="inline-block pt-2 text-sm font-body font-normal capitalize leading-relaxed text-neutral-700 dark:text-neutral-400">
                       <span className="capitalize">
                         {new Date(job.start_date).toLocaleDateString("en-US", {
                           month: "long",
@@ -252,7 +252,7 @@ const AboutPage = ({ data }) => {
                       <H3>
                         {edu.degree.text} &mdash; {edu.university.text}
                       </H3>
-                      <time className="inline-block pt-2 text-sm font-body font-normal italic capitalize leading-relaxed text-neutral-500 dark:text-neutral-400">
+                      <time className="inline-block pt-2 text-sm font-body font-normal capitalize leading-relaxed text-neutral-700 dark:text-neutral-400">
                         <span className="capitalize">
                           {new Date(edu.start_date).toLocaleDateString(
                             "en-US",
@@ -311,6 +311,8 @@ const AboutPage = ({ data }) => {
                       </SkillList>
                     </SkillWrapper>
                   )
+                } else {
+                  return null
                 }
               })}
             </div>

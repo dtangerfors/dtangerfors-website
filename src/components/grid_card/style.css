@@ -4,14 +4,22 @@
 
 @layer components {
    .card {
-      @apply col-span-6 md:col-span-3 overflow-hidden self-end mb-12 lg:mb-40;
+      @apply col-span-6 md:col-span-3 overflow-hidden  mb-12 lg:mb-40;
    }
 
-   .card:first-child {
+   /* .card:first-child {
       @apply col-span-full;
+   } */
+
+   .card:nth-child(9n + 1) {
+      @apply col-span-full md:col-span-9;
    }
 
    .card:nth-child(9n + 2) {
+      @apply self-end;
+   }
+
+   .card:nth-child(9n + 5) {
       @apply md:col-span-6;
    }
 
@@ -20,11 +28,11 @@
    }
 
    .card-figure {
-      @apply relative w-full pt-[75%];
+      @apply relative w-full pt-[90%];
    }
 
-   .card:first-child .card-figure {
-      @apply pt-[42.5%] md:pt-[33%];
+   .card:nth-child(9n + 1) .card-figure {
+      @apply pt-[66.77%];
    }
 
    .card-image {

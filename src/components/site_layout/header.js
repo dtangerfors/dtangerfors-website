@@ -7,15 +7,15 @@ import Nav from "../Nav"
 
 
 const NavLink = ({children, to}) => (
-  <Link to={to} className="font-sans text-sm uppercase tracking-widest no-underline mx-4 leading-[4rem] text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-50">{children}</Link>
+  <Link to={to} className="font-sans text-sm uppercase tracking-widest no-underline mx-4 leading-[4rem] text-black hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-50">{children}</Link>
 )
 
 const Header = ({ siteTitle }) => {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="sticky flex justify-between top-0 left-0 w-full z-50 backdrop-blur-md bg-neutral-50/70 border-b border-neutral-900/10 dark:bg-black/70 dark:border-white/30">
-      <div className="flex justify-end items-center w-full p-4 pl-safe pr-0 lg:pr-0 lg:pl-12 xl:pl-20 max-w-screen-2xl mx-auto">
+    <header className="fixed flex justify-between top-0 left-0 w-full z-50">
+      <div className="flex justify-end items-center w-full p-4 pl-8 pl-safe pr-0 lg:pr-0 max-w-screen-2xl mx-auto">
         <Link to="/" className="m-0 mr-auto rounded-full text-0">
           <svg className="w-12 fill-neutral-900 dark:fill-neutral-50" viewBox="0 0 283.5 283.5">
             <path

@@ -12,9 +12,11 @@ import { AnimatedTitle } from "../components/AnimatedTitle"
 import AnimationWrapper from "../components/AnimationWrapper"
 import { fadeUp, transition } from "../animation"
 import { ButtonSecondary } from "../components/buttons"
-import ProjectCard from "../components/ProjectCard"
 import aboutImage from "../images/daniel-about-me-image-1500.jpg"
 import meta_card from "../images/juice-meta-card.jpg"
+import GridCard from "../components/grid_card"
+
+import bgImage from "../images/gradient-bg.webp"
 
 // Query
 export const query = graphql`
@@ -34,8 +36,7 @@ export const query = graphql`
       }
     }
     allPrismicProject(
-      sort: { fields: first_publication_date, order: DESC }
-      limit: 3
+      sort: { fields: last_publication_date, order: DESC }
       filter: { data: { categories: { eq: "Development" } } }
     ) {
       edges {
@@ -95,7 +96,7 @@ const IndexPage = ({ data }) => {
             </div>
           </div>
         </header> */}
-        <header className="relative min-h-[55vh] lg:min-h-[75vh] w-full grid place-items-center px-8 lg:px-12 xl:px-20">
+        {/* <header className="relative min-h-[55vh] lg:min-h-[75vh] w-full grid place-items-center px-8 lg:px-12 xl:px-20">
             <div className="relative z-10 w-full max-w-screen-xl mx-auto lg:top-[-70px] text-center">
               <AnimatedTitle
                 text="Daniel. Frontend developer. Designer."
@@ -147,20 +148,39 @@ const IndexPage = ({ data }) => {
               </svg>
             </div>
           </div>
+        </header> */}
+        <header className="relative min-h-[55vh] lg:min-h-[75vh] w-full flex items-end p-8">
+            <div className="relative z-10 w-full max-w-screen-md">
+              <AnimatedTitle
+                text="Daniel. Frontend developer. Designer."
+                textSize="text-display"
+                color="text-white"
+                key="index-tite"
+              />
+              <p
+              key="index-subtitle"
+              className="text-lg font-body font-normal leading-relaxed max-w-screen-sm mt-8 text-white"
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: 0.3, ...transition }}>
+              Welcome to my page. Originally a photographer, turned graphic designer who now does frontend development. View my work below.
+              </p>
+            </div>
+          <div className="absolute w-full h-full inset-0">
+            <img src={bgImage} alt=""  class="w-full h-full object-cover"/>
+            
+          </div>
         </header>
         <Container>
           <InnerContainer>
-            <div className="grid grid-cols-12 grid-rows-[auto] col-span-full gap-4 md:gap-8 max-w-screen-xl mx-auto mt-12">
-              {projects.map((project, i) => {
-                return (
-                  <ProjectCard
-                    item={project.node}
-                    index={i}
-                    key={`project-${i}`}
-                  />
-                )
+          <div className="grid grid-cols-12 grid-rows-[auto] col-span-full gap-4 md:gap-8">
+          {projects
+              .map((project, i) => {
+                return <GridCard item={project.node} index={i} key={`project-${i}`} />
               })}
-            </div>
+              
+          </div>
           </InnerContainer>
         </Container>
         <Container>

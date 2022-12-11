@@ -7,40 +7,38 @@ import {
   Container,
   InnerContainer,
 } from "../../components/site_layout/containers"
-import ProjectCard from "../../components/ProjectCard"
 import GridCard from "../../components/grid_card"
 
 // Query
 export const query = graphql`
-  {
-    allPrismicProject(
-      sort: {fields: first_publication_date, order: DESC}
-    ) {
-      edges {
-        node {
-          data {
-            title {
-              text
-            }
-            subtitle {
-              text
-            }
-            thumbnail {
-              alt
-              copyright
-              url
-            }
-            work_in_progress
-            categories
+{
+  allPrismicProject(sort: {order: DESC, fields: last_publication_date}) {
+    edges {
+      node {
+        data {
+          title {
+            text
           }
-          id
-          uid
-          type
-          url
+          subtitle {
+            text
+          }
+          thumbnail {
+            alt
+            copyright
+            url
+          }
+          work_in_progress
+          categories
         }
+        id
+        uid
+        type
+        url
       }
     }
   }
+}
+
 `
 
 const WorkPage = ({ data }) => {

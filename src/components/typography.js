@@ -18,7 +18,7 @@ const H4 = props => (
 )
 
 const Paragraph = props => (
-   <motion.p {...props} className={`text-base font-body font-normal leading-relaxed text-neutral-600 dark:text-neutral-300 pb-[.8em] ${props.className}`}>{props.children}</motion.p>
+   <motion.p {...props} className={`text-base font-body font-normal leading-relaxed text-neutral-800 dark:text-neutral-300 pb-[.8em] ${props.className}`}>{props.children}</motion.p>
 )
 
 const Ul = props => (
@@ -26,11 +26,11 @@ const Ul = props => (
 )
 
 const Li = props => (
-   <motion.li {...props} className={`text-base font-body font-normal leading-relaxed text-neutral-600 dark:text-neutral-300 pb-4 last:pb-0 ${props.className}`}>{props.children}</motion.li>
+   <motion.li {...props} className={`text-base font-body font-normal leading-relaxed text-neutral-800 dark:text-neutral-300 pb-4 last:pb-0 ${props.className}`}>{props.children}</motion.li>
 )
 
 const Ingress = props => (
-   <motion.p {...props} className={`text-lg font-body font-light leading-relaxed max-w-prose text-neutral-900 dark:text-neutral-50 ${props.className}`}>{props.children}</motion.p>
+   <motion.p {...props} className={`text-lg font-body font-normal leading-relaxed max-w-prose text-neutral-900 dark:text-neutral-50 ${props.className}`}>{props.children}</motion.p>
 )
 
 const Label = props => (
@@ -38,7 +38,7 @@ const Label = props => (
 )
 
 const Figcaption = props => (
-   <figcaption {...props} className={`pt-4 text-sm font-body text-neutral-600 dark:text-neutral-300 ${props.className}`}>{props.children}</figcaption>
+   <figcaption {...props} className={`pt-4 text-sm font-body text-neutral-800 dark:text-neutral-300 ${props.className}`}>{props.children}</figcaption>
 )
 
 export {H1, H2, H3, H4, Paragraph, Ingress, Label, Li, Ul, Figcaption}

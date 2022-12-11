@@ -4,8 +4,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      'body': 'aileron, -apple-system, sans-serif',
-      'serif':'swear-display, serif',
+      'body': '"Cabinet Grotesk", -apple-system, sans-serif',
+      'serif':'"Cabinet Grotesk", serif',
     },
     fontSize: {
       '0': '0',

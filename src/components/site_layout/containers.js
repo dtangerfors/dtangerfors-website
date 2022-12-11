@@ -2,7 +2,7 @@ import React from "react";
 
 
 const Container = ({children}) => (
-   <section className="p-8 px-safe lg:p-12 xl:p-20">
+   <section className="p-8 px-safe">
       {children}
    </section>
 )
