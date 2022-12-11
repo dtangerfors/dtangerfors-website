@@ -1,6 +1,7 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import { AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import { Helmet } from "react-helmet"
 
 // Components
@@ -20,53 +21,57 @@ import bgImage from "../images/gradient-bg.webp"
 
 // Query
 export const query = graphql`
-  query IndexPage {
-    allPrismicHomepage {
-      edges {
-        node {
-          data {
-            title {
-              text
-            }
-            excerpt {
-              text
-            }
+query IndexPage {
+  allPrismicHomepage {
+    edges {
+      node {
+        data {
+          title {
+            text
           }
-        }
-      }
-    }
-    allPrismicProject(
-      sort: { fields: last_publication_date, order: DESC }
-      filter: { data: { categories: { eq: "Development" } } }
-    ) {
-      edges {
-        node {
-          data {
-            title {
-              text
-            }
-            subtitle {
-              text
-            }
-            thumbnail {
-              alt
-              copyright
-              url
-            }
-            work_in_progress
-            categories
+          excerpt {
+            text
           }
-          id
-          uid
-          type
-          url
-        }
-        next {
-          first_publication_date
         }
       }
     }
   }
+  allPrismicProject(
+    sort: {fields: last_publication_date, order: DESC}
+    filter: {data: {categories: {eq: "Development"}}}
+  ) {
+    edges {
+      node {
+        data {
+          title {
+            text
+          }
+          subtitle {
+            text
+          }
+          thumbnail {
+            alt
+            copyright
+            url
+          }
+          work_in_progress
+          categories
+          thumbnail_video {
+            url
+          }
+        }
+        id
+        uid
+        type
+        url
+      }
+      next {
+        first_publication_date
+      }
+    }
+  }
+}
+
 `
 
 const IndexPage = ({ data }) => {
@@ -157,7 +162,7 @@ const IndexPage = ({ data }) => {
                 color="text-white"
                 key="index-tite"
               />
-              <p
+              <motion.p
               key="index-subtitle"
               className="text-lg font-body font-normal leading-relaxed max-w-screen-sm mt-8 text-white"
               variants={fadeUp}
@@ -165,7 +170,7 @@ const IndexPage = ({ data }) => {
               animate="visible"
               transition={{ delay: 0.3, ...transition }}>
               Welcome to my page. Originally a photographer, turned graphic designer who now does frontend development. View my work below.
-              </p>
+              </motion.p>
             </div>
           <div className="absolute w-full h-full inset-0">
             <img src={bgImage} alt=""  class="w-full h-full object-cover"/>

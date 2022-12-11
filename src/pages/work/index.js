@@ -29,6 +29,9 @@ export const query = graphql`
           }
           work_in_progress
           categories
+          thumbnail_video {
+            url
+          }
         }
         id
         uid

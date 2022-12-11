@@ -53,6 +53,14 @@
         "label": "Thumbnail"
       }
     },
+    "thumbnail-video": {
+      "type": "Link",
+      "config": {
+        "select": "media",
+        "label": "thumbnail-video",
+        "placeholder": "Thumbnail video"
+      }
+    },
     "project_demo": {
       "type": "Link",
       "config": {
@@ -66,7 +74,8 @@
       "config": {
         "allowTargetBlank": true,
         "label": "Github Repo",
-        "placeholder": "Link to Github repo"
+        "placeholder": "Link to Github repo",
+        "select": null
       }
     },
     "categories": {
