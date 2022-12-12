@@ -7,7 +7,7 @@ import Nav from "../Nav"
 
 
 const NavLink = ({children, to}) => (
-  <Link to={to} className="font-sans text-sm uppercase tracking-widest no-underline mx-4 leading-[4rem] text-black hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-50">{children}</Link>
+  <Link to={to} className="font-sans text-sm uppercase tracking-widest no-underline mx-4 leading-[4rem] text-black dark:text-white hover:underline">{children}</Link>
 )
 
 const Header = ({ siteTitle }) => {
