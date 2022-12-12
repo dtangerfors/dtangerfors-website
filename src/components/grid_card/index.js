@@ -1,11 +1,14 @@
 import React from "react"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { motion } from "framer-motion"
 import { Link } from "gatsby"
 
 import { fadeUp, transition } from "../../animation"
 import "./style.css"
 
-const GridCard = ({ item, index }) => (
+const GridCard = ({ item, index }) => {
+  const image = getImage(item.data.thumbnail);
+  return (
   <motion.div
     variants={fadeUp}
     initial="hidden"
@@ -34,15 +37,12 @@ const GridCard = ({ item, index }) => (
             <source src={item.data.thumbnail_video.url}></source>
           </video>
         ) : (
-          <img
-            src={item.data.thumbnail.url}
-            alt={item.data.thumbnail.alt}
-            className="card-image"
-          />
+          <GatsbyImage image={image} alt={item.data.thumbnail.alt} className="absolute w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"/>
         )}
       </figure>
     </Link>
   </motion.div>
 )
+}
 
 export default GridCard

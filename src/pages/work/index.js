@@ -26,6 +26,7 @@ export const query = graphql`
             alt
             copyright
             url
+            gatsbyImageData(width: 1200, placeholder: BLURRED, imgixParams: {q: 80})
           }
           work_in_progress
           categories

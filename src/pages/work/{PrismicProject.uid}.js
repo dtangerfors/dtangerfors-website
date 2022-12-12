@@ -15,87 +15,89 @@ import { fadeUp, transition } from "../../animation"
 
 // Query
 export const query = graphql`
-  query Project($uid: String) {
-    allPrismicProject(filter: { uid: { eq: $uid } }) {
-      edges {
-        node {
-          data {
-            title {
-              text
-            }
-            featured_image {
-              alt
-              copyright
-              url
-              gatsbyImageData
-            }
-            categories
-            excerpt {
-              text
-            }
-            project_demo {
-              type
-              url
-            }
-            github_repo {
-              type
-              url
-            }
-            body {
-              ... on PrismicProjectDataBodyText {
-                id
-                primary {
-                  text {
-                    richText
-                  }
+query Project($uid: String) {
+  allPrismicProject(filter: {uid: {eq: $uid}}) {
+    edges {
+      node {
+        data {
+          title {
+            text
+          }
+          featured_image {
+            alt
+            copyright
+            url
+            gatsbyImageData(width: 1920, placeholder: BLURRED, imgixParams: {q: 80})
+          }
+          categories
+          excerpt {
+            text
+          }
+          project_demo {
+            type
+            url
+          }
+          github_repo {
+            type
+            url
+          }
+          body {
+            ... on PrismicProjectDataBodyText {
+              id
+              primary {
+                text {
+                  richText
                 }
-                slice_label
-                slice_type
               }
-              ... on PrismicProjectDataBodyImage {
-                id
-                primary {
-                  image {
-                    alt
-                    copyright
-                    url
-                  }
+              slice_label
+              slice_type
+            }
+            ... on PrismicProjectDataBodyImage {
+              id
+              primary {
+                image {
+                  alt
+                  copyright
+                  url
+                  gatsbyImageData(width: 1200, placeholder: BLURRED, imgixParams: {q: 80})
                 }
-                slice_label
-                slice_type
               }
-              ... on PrismicProjectDataBodyImageCarousel {
-                id
-                items {
-                  image {
-                    alt
-                    copyright
-                    url
-                  }
+              slice_label
+              slice_type
+            }
+            ... on PrismicProjectDataBodyImageCarousel {
+              id
+              items {
+                image {
+                  alt
+                  copyright
+                  url
+                  gatsbyImageData(width: 1200, placeholder: BLURRED, imgixParams: {q: 80})
                 }
-                slice_label
-                slice_type
               }
-              ... on PrismicProjectDataBodyParallaxImage {
-                id
-                primary {
-                  image {
-                    alt
-                    copyright
-                    url
-                  }
+              slice_label
+              slice_type
+            }
+            ... on PrismicProjectDataBodyParallaxImage {
+              id
+              primary {
+                image {
+                  alt
+                  copyright
+                  url
                 }
-                slice_label
-                slice_type
               }
+              slice_label
+              slice_type
             }
           }
-          uid
-          type
         }
+        uid
+        type
       }
     }
   }
+}
 `
 
 // Sort and display the different slice options

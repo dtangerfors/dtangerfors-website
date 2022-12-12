@@ -1,4 +1,5 @@
 import React from "react"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Container, InnerContainer } from "../site_layout/containers"
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react"
@@ -31,17 +32,21 @@ const Carousel = ({ slice }) => {
               }}
               items={slice.items}
             >
-              {slice.items.map(item => (
-                <SwiperSlide>
-                  <figure className="col-span-full">
-                    <img
+              {slice.items.map(item => {
+                const image = getImage(item.image)
+                return (
+                  <SwiperSlide>
+                    <figure className="col-span-full">
+                      {/* <img
                       className="w-full"
                       src={item.image.url}
                       alt={item.image.alt}
-                    />
-                  </figure>
-                </SwiperSlide>
-              ))}
+                    /> */}
+                      <GatsbyImage image={image} alt={item.image.alt} />
+                    </figure>
+                  </SwiperSlide>
+                )
+              })}
             </Swiper>
           </div>
         </InnerContainer>
