@@ -25,8 +25,8 @@ const GridCard = ({ item, index }) => {
           {item.data.subtitle.text}
         </p>
       </div>
-      <figure className="card-figure">
         {item.data.thumbnail_video.url ? (
+          <figure className="card-figure">
           <video
             autoPlay
             muted
@@ -36,10 +36,11 @@ const GridCard = ({ item, index }) => {
           >
             <source src={item.data.thumbnail_video.url}></source>
           </video>
+          </figure>
         ) : (
-          <GatsbyImage image={image} alt={item.data.thumbnail.alt} className="absolute w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"/>
+          <GatsbyImage image={image} alt={item.data.thumbnail.alt} className="card-figure"/>
         )}
-      </figure>
+      
     </Link>
   </motion.div>
 )

@@ -39,6 +39,10 @@
       @apply absolute w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2;
    }
 
+   .card-figure div {
+      @apply absolute w-full h-full inset-0;
+   }
+
    .card-text {
       @apply relative z-10 flex flex-col justify-end flex-wrap pb-8;
    }
