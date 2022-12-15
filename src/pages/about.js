@@ -5,7 +5,7 @@ import Layout from "../components/site_layout/layout"
 import Seo from "../components/seo"
 import { H3, Ingress, Label, Paragraph } from "../components/typography"
 import { AnimatedTitle } from "../components/AnimatedTitle"
-import aboutImage from "../images/daniel-about-me-image-1500.jpg"
+import aboutImage from "../images/me-at-800.jpg"
 import { blobAnimation, blobTransition } from "../components/Blob"
 import { ContactOption, ContactWrapper } from "../components/about/contact"
 import { fadeUp, fadeUpList, transition, fadeUpItem } from "../animation"
@@ -160,8 +160,7 @@ const AboutPage = ({ data }) => {
                 animate="visible"
                 variants={blobAnimation}
                 transition={blobTransition}
-                className="w-full aspect-square overflow-hidden border border-neutral-900/10 dark:border-white/30"
-                style={{ borderRadius: "36% 64% 60% 40% / 57% 53% 47% 43%" }}
+                className="w-full aspect-square overflow-hidden rounded-full"
               >
                 <img
                   src={aboutImage}
