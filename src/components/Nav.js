@@ -23,7 +23,7 @@ const NavLink = props => (
   <Link
     to={props.to}
     title={props.title}
-    className="group block font-serif text-3xl font-thin leading-none text-black dark:text-white"
+    className="group block font-display text-3xl font-thin leading-none text-black dark:text-white"
   >
     {props.children}{" "}
     <Arrow

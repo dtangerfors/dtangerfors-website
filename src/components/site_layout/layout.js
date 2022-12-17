@@ -54,8 +54,8 @@ const Layout = ({ children }) => {
   return (
     <>
       <Helmet>
-        {/* <link rel="stylesheet" href="https://use.typekit.net/wdd3eii.css" /> */}
-        <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,400,300,900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://use.typekit.net/wdd3eii.css" />
+        {/* <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,400,300,900&display=swap" rel="stylesheet" /> */}
         <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"></link>
         <meta
           name="viewport"

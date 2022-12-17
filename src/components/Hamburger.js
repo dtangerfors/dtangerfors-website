@@ -7,7 +7,7 @@ const Hamburger = ({ setOpen, open }) => (
     key="hamburger"
     open={open}
     onClick={() => setOpen(!open)}
-    className="group relative appearance-none flex items-center p-6 lg:p-8 -m-4 mr-0 font-sans text-sm uppercase tracking-widest no-underline mx-4 text-black dark:text-white"
+    className="group relative appearance-none flex items-center p-4 font-sans text-sm uppercase tracking-widest no-underline ml-4 -mr-4 text-black dark:text-white"
   >
     Menu
     <span className="relative top-0 w-8 h-8 inline-flex flex-col justify-around ml-4 transition-all duration-200">

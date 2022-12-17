@@ -12,25 +12,25 @@ import AnimationWrapper from "../components/AnimationWrapper"
    
     switch(type) {
       case Element.heading1: // Heading 1
-        return <AnimationWrapper><H1 key={key}>{children}</H1></AnimationWrapper>
+        return <AnimationWrapper><H1 key={`h1-${key}`}>{children}</H1></AnimationWrapper>
 
       case Element.heading2: // Heading 2
-        return <AnimationWrapper><H2 key={key}>{children}</H2></AnimationWrapper>
+        return <AnimationWrapper><H2 key={`h2-${key}`}>{children}</H2></AnimationWrapper>
 
       case Element.heading3: // Heading 3
-        return <AnimationWrapper><H3 key={key}>{children}</H3></AnimationWrapper>
+        return <AnimationWrapper><H3 key={`h3-${key}`}>{children}</H3></AnimationWrapper>
     
       case Element.heading4: // Heading 4
-        return <AnimationWrapper><H4 key={key}>{children}</H4></AnimationWrapper>
+        return <AnimationWrapper><H4 key={`h4-${key}`}>{children}</H4></AnimationWrapper>
 
       case Element.paragraph: // Paragraph
-        return <AnimationWrapper><Paragraph secondary key={key}>{children}</Paragraph></AnimationWrapper>
+        return <AnimationWrapper><Paragraph secondary key={`paragraph-${key}`}>{children}</Paragraph></AnimationWrapper>
       
       case Element.list: // Unordered list
-        return <AnimationWrapper><Ul secondary key={key}>{children}</Ul></AnimationWrapper>
+        return <AnimationWrapper><Ul secondary key={`ul-${key}`}>{children}</Ul></AnimationWrapper>
 
       case Element.listItem: // List item
-        return <Li secondary key={key}>{children}</Li>
+        return <Li secondary key={`li-${key}`}>{children}</Li>
 
       default: // Always include a default that returns null
         return null

@@ -7,13 +7,9 @@ import { Helmet } from "react-helmet"
 // Components
 import Layout from "../components/site_layout/layout"
 import { Container, InnerContainer } from "../components/site_layout/containers"
-import { Ingress } from "../components/typography"
 import Seo from "../components/seo"
 import { AnimatedTitle } from "../components/AnimatedTitle"
-import AnimationWrapper from "../components/AnimationWrapper"
 import { fadeUp, transition } from "../animation"
-import { ButtonSecondary } from "../components/buttons"
-import aboutImage from "../images/me-at-800.jpg"
 import meta_card from "../images/juice-meta-card.jpg"
 import GridCard from "../components/grid_card"
 
@@ -78,7 +74,6 @@ query IndexPage {
 const IndexPage = ({ data }) => {
   const prismicContent = data
   if (!prismicContent) return null
-  const homepage = prismicContent.allPrismicHomepage.edges[0].node.data
   const projects = prismicContent.allPrismicProject.edges
   return (
     <Layout>

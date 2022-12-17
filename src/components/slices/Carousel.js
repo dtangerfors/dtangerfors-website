@@ -11,8 +11,8 @@ import "../../styles/swiper.css"
 
 const Carousel = ({ slice }) => {
   return (
-    <div className="relative border-y border-neutral-900/10 dark:border-white/30">
-      <Container>
+    <Container>
+        <div className="-mb-8 pb-8 border-b border-neutral-900/10 dark:border-white/30">
         <InnerContainer>
           <div className="col-span-7 lg:col-start-4">
             <Swiper
@@ -24,10 +24,10 @@ const Carousel = ({ slice }) => {
               pagination={{ clickable: true }}
               breakpoints={{
                 1024: {
-                  spaceBetween: 30,
+                  spaceBetween: 20,
                 },
                 1280: {
-                  spaceBetween: 50,
+                  spaceBetween: 20,
                 },
               }}
               items={slice.items}
@@ -50,8 +50,8 @@ const Carousel = ({ slice }) => {
             </Swiper>
           </div>
         </InnerContainer>
-      </Container>
     </div>
+      </Container>
   )
 }
 

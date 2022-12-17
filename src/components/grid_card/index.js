@@ -18,7 +18,7 @@ const GridCard = ({ item, index }) => {
   >
     <Link id={item.uid} to={item.url} className="card-link">
       <div className="card-text">
-        <h2 className="font-serif text-xl text-black dark:text-white">
+        <h2 className="font-sans text-xl text-black dark:text-white">
           {item.data.title.text}
         </h2>
         <p className="text-sm font-body text-neutral-800 dark:text-neutral-300">
