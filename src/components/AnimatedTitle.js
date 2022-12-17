@@ -42,7 +42,7 @@ export const AnimatedTitle = ({ children, text, textSize, color }) => {
       key={children}
       aria-label={children}
       aria-live={"polite"} // dont do this on production if it loops.
-      className={`${textSize} ${color} relative inline-block leading-tight font-serif font-light z-10 break-words`}
+      className={`${textSize} ${color} relative inline-block leading-tight font-sans font-normal z-10 break-words`}
     >
       {text.split(" ").map((word, wordI) => (
         <motion.span

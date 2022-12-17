@@ -14,8 +14,8 @@ const Header = ({ siteTitle }) => {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="fixed flex justify-between top-0 left-0 w-full z-50">
-      <div className="flex justify-end items-center w-full p-4 pl-8 pl-safe pr-0 lg:pr-0 max-w-screen-2xl mx-auto">
+    <header className="fixed flex justify-between top-0 left-0 w-full z-50 p-4 px-8 px-safe">
+      <div className="flex justify-end items-center w-full max-w-screen-2xl mx-auto">
         <Link to="/" className="m-0 mr-auto rounded-full text-0">
           <svg className="w-12 fill-neutral-900 dark:fill-neutral-50" viewBox="0 0 283.5 283.5">
             <path

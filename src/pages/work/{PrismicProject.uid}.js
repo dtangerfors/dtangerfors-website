@@ -5,99 +5,112 @@ import Layout from "../../components/site_layout/layout"
 import Seo from "../../components/seo"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-import { Label, Paragraph } from "../../components/typography"
 import { Text, Image, Parallax, Carousel } from "../../components/slices"
-import {
-  letterVariants,
-} from "../../components/AnimatedTitle"
+import { letterVariants } from "../../components/AnimatedTitle"
 import AdditionalInfo from "../../components/single_project/AddionalInfo"
 import { fadeUp, transition } from "../../animation"
+import {
+  Container,
+  InnerContainer,
+} from "../../components/site_layout/containers"
 
 // Query
 export const query = graphql`
-query Project($uid: String) {
-  allPrismicProject(filter: {uid: {eq: $uid}}) {
-    edges {
-      node {
-        data {
-          title {
-            text
-          }
-          featured_image {
-            alt
-            copyright
-            url
-            gatsbyImageData(width: 1920, placeholder: BLURRED, imgixParams: {q: 80})
-          }
-          categories
-          excerpt {
-            text
-          }
-          project_demo {
-            type
-            url
-          }
-          github_repo {
-            type
-            url
-          }
-          body {
-            ... on PrismicProjectDataBodyText {
-              id
-              primary {
-                text {
-                  richText
-                }
-              }
-              slice_label
-              slice_type
+  query Project($uid: String) {
+    allPrismicProject(filter: { uid: { eq: $uid } }) {
+      edges {
+        node {
+          data {
+            title {
+              text
             }
-            ... on PrismicProjectDataBodyImage {
-              id
-              primary {
-                image {
-                  alt
-                  copyright
-                  url
-                  gatsbyImageData(width: 1200, placeholder: BLURRED, imgixParams: {q: 80})
-                }
-              }
-              slice_label
-              slice_type
+            featured_image {
+              alt
+              copyright
+              url
+              gatsbyImageData(
+                width: 1920
+                placeholder: BLURRED
+                imgixParams: { q: 80 }
+              )
             }
-            ... on PrismicProjectDataBodyImageCarousel {
-              id
-              items {
-                image {
-                  alt
-                  copyright
-                  url
-                  gatsbyImageData(width: 1200, placeholder: BLURRED, imgixParams: {q: 80})
-                }
-              }
-              slice_label
-              slice_type
+            categories
+            excerpt {
+              text
             }
-            ... on PrismicProjectDataBodyParallaxImage {
-              id
-              primary {
-                image {
-                  alt
-                  copyright
-                  url
+            project_demo {
+              type
+              url
+            }
+            github_repo {
+              type
+              url
+            }
+            body {
+              ... on PrismicProjectDataBodyText {
+                id
+                primary {
+                  text {
+                    richText
+                  }
                 }
+                slice_label
+                slice_type
               }
-              slice_label
-              slice_type
+              ... on PrismicProjectDataBodyImage {
+                id
+                primary {
+                  image {
+                    alt
+                    copyright
+                    url
+                    gatsbyImageData(
+                      width: 1200
+                      placeholder: BLURRED
+                      imgixParams: { q: 80 }
+                    )
+                  }
+                }
+                slice_label
+                slice_type
+              }
+              ... on PrismicProjectDataBodyImageCarousel {
+                id
+                items {
+                  image {
+                    alt
+                    copyright
+                    url
+                    gatsbyImageData(
+                      width: 1200
+                      placeholder: BLURRED
+                      imgixParams: { q: 80 }
+                    )
+                  }
+                }
+                slice_label
+                slice_type
+              }
+              ... on PrismicProjectDataBodyParallaxImage {
+                id
+                primary {
+                  image {
+                    alt
+                    copyright
+                    url
+                  }
+                }
+                slice_label
+                slice_type
+              }
             }
           }
+          uid
+          type
         }
-        uid
-        type
       }
     }
   }
-}
 `
 
 // Sort and display the different slice options
@@ -127,11 +140,11 @@ const SliceItems = ({ slices }) => {
 }
 
 const letterContainerVariants = {
-   before: { transition: { staggerChildren: 0.35 } },
-   after: {
-     transition: { staggerChildren: 0.035, delayChildren: 0.3 },
-   },
- }
+  before: { transition: { staggerChildren: 0.35 } },
+  after: {
+    transition: { staggerChildren: 0.035, delayChildren: 0.3 },
+  },
+}
 
 const SingleProject = ({ data }) => {
   if (!data) return null
@@ -153,57 +166,80 @@ const SingleProject = ({ data }) => {
     <Layout>
       <Seo title={title.text} />
       <AnimatePresence>
-        <header key="project-header" className="relative z-10 flex items-end p-8 lg:p-12 xl:p-20 min-h-[50vh] lg:min-h-[60vh]">
+        <header
+          key="project-header"
+          className="relative z-10 flex items-end p-8 min-h-[50vh] lg:min-h-[80vh]"
+        >
           <div key="header-div" className="max-w-screen-2xl w-full mx-auto">
-          <motion.h1
-            variants={letterContainerVariants}
-            initial={"before"}
-            animate={"after"}
-            exit={"before"}
-            key={title.text}
-            aria-label={title.text}
-            aria-live={"polite"} // dont do this on production if it loops.
-            className="relative inline-block text-display font-serif font-thin max-w-full z-10 break-words text-neutral-50"
-          >
-            {title.text.split("").map((letter, letterI) => (
-              <motion.span
-                key={`letter-${letter}-${letterI}`}
-                className="relative inline-block w-auto font-thin"
-                // Position elements
-                variants={letterVariants}
-              >
-                {letter === " " ? "\u00A0" : `${letter}`}
-              </motion.span>
-            ))}
-          </motion.h1>
+            <motion.h1
+              variants={letterContainerVariants}
+              initial={"before"}
+              animate={"after"}
+              exit={"before"}
+              key={title.text}
+              aria-label={title.text}
+              aria-live={"polite"} // dont do this on production if it loops.
+              className="relative inline-block text-display font-sans font-normal max-w-full z-10 break-words text-neutral-50"
+            >
+              {title.text.split("").map((letter, letterI) => (
+                <motion.span
+                  key={`letter-${letter}-${letterI}`}
+                  className="relative inline-block w-auto font-thin"
+                  // Position elements
+                  variants={letterVariants}
+                >
+                  {letter === " " ? "\u00A0" : `${letter}`}
+                </motion.span>
+              ))}
+            </motion.h1>
           </div>
-          
-          <figure key="header-figure" className="absolute w-full h-full -z-10 inset-0">
-            <GatsbyImage image={image} className="w-full h-full object-cover" alt={featured_image.alt}/>
+
+          <figure
+            key="header-figure"
+            className="absolute w-full h-full -z-10 inset-0"
+          >
+            <GatsbyImage
+              image={image}
+              className="w-full h-full object-cover"
+              alt={featured_image.alt}
+            />
             <div className="absolute w-full h-full inset-0 bg-gradient-to-t from-black/40 to-black/5"></div>
           </figure>
         </header>
-        <div key="project-additional-info" className="px-8 lg:px-12 xl:px-20 border-y border-neutral-900/10 dark:border-white/30">
-          <div className="flex flex-wrap w-full max-w-screen-2xl mx-auto">
-            <motion.div variants={fadeUp}
-                initial="hidden"
-                animate="visible"
-                transition={{ delay: 0.3, ...transition }} className="md:w-1/2 py-8 lg:py-12 xl:py-20 border-b md:border-b-0 md:border-r border-neutral-900/10 dark:border-white/30">
-              <Label>About</Label>
-              <Paragraph className="max-w-prose pt-8 pb-0">{excerpt.text}</Paragraph>
-            </motion.div>
-            <motion.div variants={fadeUp}
-                initial="hidden"
-                animate="visible"
-                transition={{ delay: 0.4, ...transition }} className="md:w-1/2 py-8 lg:py-12 xl:py-20 md:pl-8 lg:pl-12 xl:pl-20">
-              <Label>Additional info</Label>
 
-              <AdditionalInfo category={categories} demo={project_demo} github={github_repo} />
+        <Container key="project-additional-info">
+          <div className="-mb-8 py-12 border-b border-neutral-900/10 dark:border-white/30">
+          <InnerContainer>
+            <motion.div
+              key="project-info-tab"
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: 0.3, ...transition }}
+              className="col-span-full lg:col-span-3"
+            >
+              <AdditionalInfo
+                category={categories}
+                demo={project_demo}
+                github={github_repo}
+              />
             </motion.div>
+            <motion.div
+              key="project-intro"
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: 0.4, ...transition }}
+              className="col-span-7 lg:col-start-4"
+            >
+              <p className="font-display text-2xl text-neutral-800 dark:text-neutral-300 max-w-prose pb-0">
+                {excerpt.text}
+              </p>
+            </motion.div>
+          </InnerContainer>
           </div>
-        </div>
-          {body ? <SliceItems key="project-body" slices={body} /> : null}
-        
+        </Container>
+        {body ? <SliceItems key="project-body" slices={body} /> : null}
       </AnimatePresence>
     </Layout>
   )
