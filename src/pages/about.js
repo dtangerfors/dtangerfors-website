@@ -96,8 +96,8 @@ const AboutPage = ({ data }) => {
     <Layout>
       <Seo title="About me" />
       <AnimatePresence>
-        <section className="max-w-screen-xl mx-auto px-safe lg:px-12 xl:px-20 pt-40 lg:pt-80">
-          <header className="grid grid-cols-12">
+        <section className="max-w-screen-xl mx-auto px-safe lg:px-12 xl:px-20 pt-40 lg:pt-60">
+          <header className="grid grid-cols-12 pb-16 border-b border-neutral-900/10 dark:border-white/30">
             <div className="col-span-full lg:col-end-9 lg:pr-12 order-2 lg:order-first">
               <Label
                 variants={fadeUp}
@@ -170,9 +170,10 @@ const AboutPage = ({ data }) => {
               </motion.figure>
             </div>
           </header>
-          <div className="mt-40 grid grid-cols-12 gap-12">
+          <div className="mt-16 grid grid-cols-12 gap-12">
             <div className="col-span-full md:col-end-9">
               <Label
+                className="pb-8"
                 variants={fadeUp}
                 initial="hidden"
                 animate="visible"
@@ -195,7 +196,7 @@ const AboutPage = ({ data }) => {
                     animate="visible"
                     transition={{ delay: 0.3, ...transition }}
                   >
-                    <H3>
+                    <H3 className="pt-0">
                       {job.job_title.text} &mdash; {job.work_place.text}
                     </H3>
                     <Paragraph className="max-w-prose">
@@ -226,6 +227,7 @@ const AboutPage = ({ data }) => {
             <div className="col-span-full md:col-start-9 flex flex-wrap gap-20">
               <div>
                 <Label
+                className="pb-8"
                   variants={fadeUp}
                   initial="hidden"
                   animate="visible"
@@ -248,7 +250,7 @@ const AboutPage = ({ data }) => {
                       animate="visible"
                       transition={{ delay: 0.3, ...transition }}
                     >
-                      <H3>
+                      <H3 className="pt-0">
                         {edu.degree.text} &mdash; {edu.university.text}
                       </H3>
                       <time className="inline-block pt-2 text-sm font-body font-normal capitalize leading-relaxed text-neutral-700 dark:text-neutral-400">
@@ -283,6 +285,7 @@ const AboutPage = ({ data }) => {
                   return (
                     <SkillWrapper key={`skill-${index}`}>
                       <Label
+                      className="pb-8"
                         variants={fadeUp}
                         initial="hidden"
                         animate="visible"

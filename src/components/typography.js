@@ -30,7 +30,7 @@ const Li = props => (
 )
 
 const Ingress = props => (
-   <motion.p {...props} className={`text-lg font-body font-light leading-relaxed max-w-prose text-neutral-900 dark:text-neutral-50 ${props.className}`}>{props.children}</motion.p>
+   <motion.p {...props} className={`text-lg font-body font-light leading-relaxed max-w-screen-sm text-neutral-900 dark:text-neutral-50 ${props.className}`}>{props.children}</motion.p>
 )
 
 const Label = props => (

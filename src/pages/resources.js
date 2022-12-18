@@ -62,7 +62,7 @@ const ResourcePage = ({ data }) => {
       <Hero title={title}>
          <motion.div key="hero-lead" initial="hidden"
              animate="visible"
-             variants={fadeUp} className="pt-10">
+             variants={fadeUp}>
          <Ingress>{lead.text}</Ingress>
          </motion.div>
          

@@ -16,7 +16,7 @@ const ResourceContent = ({ resources }) => {
              initial="hidden"
              animate="visible"
              variants={fadeUpList}
-             className="grid md:grid-cols-3 gap-12 mt-40 first:mt-0"
+             className="grid md:grid-cols-3 gap-12 mt-40 first:mt-0 pb-16 border-b border-neutral-900/10 dark:border-white/30"
            >
               <motion.header 
                variants={fadeUpItem}
@@ -24,8 +24,7 @@ const ResourceContent = ({ resources }) => {
                initial="hidden"
                animate="visible"
                transition={transition}
-               style={{marginRight: 'calc(-1 * (1536px / 2) - 50vw)'}}
-               className="relative md:col-span-3 after:absolute after:w-full after:h-px after:bottom-0 after:right-0 after:block after:bg-gradient-to-r from-[#ae5ae0] via-[#ffcb00] to-[#ff5500]"
+               className="relative md:col-span-3"
                >
               <H2>
                {resource.primary.category_title.text}
