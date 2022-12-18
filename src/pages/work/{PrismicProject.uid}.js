@@ -24,6 +24,9 @@ export const query = graphql`
             title {
               text
             }
+            subtitle {
+              text
+            }
             featured_image {
               alt
               copyright
@@ -140,9 +143,9 @@ const SliceItems = ({ slices }) => {
 }
 
 const letterContainerVariants = {
-  before: { transition: { staggerChildren: 0.35 } },
+  before: { transition: { staggerChildren: 0.02 } },
   after: {
-    transition: { staggerChildren: 0.035, delayChildren: 0.3 },
+    transition: { staggerChildren: 0.035, delayChildren: 0.01},
   },
 }
 
@@ -152,6 +155,7 @@ const SingleProject = ({ data }) => {
 
   let {
     title,
+    subtitle,
     featured_image,
     excerpt,
     project_demo,
@@ -170,7 +174,7 @@ const SingleProject = ({ data }) => {
           key="project-header"
           className="relative z-10 flex items-end p-8 min-h-[50vh] lg:min-h-[80vh]"
         >
-          <div key="header-div" className="max-w-screen-2xl w-full mx-auto">
+          <div key="header-div" className="max-w-screen-md w-full">
             <motion.h1
               variants={letterContainerVariants}
               initial={"before"}
@@ -179,18 +183,42 @@ const SingleProject = ({ data }) => {
               key={title.text}
               aria-label={title.text}
               aria-live={"polite"} // dont do this on production if it loops.
-              className="relative inline-block text-display font-sans font-normal max-w-full z-10 break-words text-neutral-50"
+              className="relative inline-block text-3xl font-normal leading-tight max-w-full z-10 break-words text-neutral-50"
             >
-              {title.text.split("").map((letter, letterI) => (
+              {title.text.split(" ").map((letter, letterI) => (
                 <motion.span
                   key={`letter-${letter}-${letterI}`}
-                  className="relative inline-block w-auto font-thin"
+                  className="relative inline-block w-auto font-display italic text-[1.1em]"
                   // Position elements
                   variants={letterVariants}
                 >
                   {letter === " " ? "\u00A0" : `${letter}`}
                 </motion.span>
-              ))}
+              )).reduce((prev, curr) => [prev, '\u00A0', curr])}
+              <motion.span
+                key="title-dot"
+                className="relative inline-block w-auto font-display"
+                variants={letterVariants}
+              >
+                .{"\u00A0"}
+              </motion.span>
+              {subtitle.text.split(" ").map((letter, letterI) => (
+                <motion.span
+                  key={`letter-${letter}-${letterI}`}
+                  className="relative inline-block w-auto font-sans"
+                  // Position elements
+                  variants={letterVariants}
+                >
+                  {letter === " " ? "\u00A0" : `${letter}`}
+                </motion.span>
+              )).reduce((prev, curr) => [prev, '\u00A0', curr])}
+               <motion.span
+                key="title-dot-end"
+                className="relative inline-block w-auto font-display"
+                variants={letterVariants}
+              >
+                .{"\u00A0"}
+              </motion.span>
             </motion.h1>
           </div>
 
@@ -209,34 +237,34 @@ const SingleProject = ({ data }) => {
 
         <Container key="project-additional-info">
           <div className="-mb-8 py-12 border-b border-neutral-900/10 dark:border-white/30">
-          <InnerContainer>
-            <motion.div
-              key="project-info-tab"
-              variants={fadeUp}
-              initial="hidden"
-              animate="visible"
-              transition={{ delay: 0.3, ...transition }}
-              className="col-span-full lg:col-span-3"
-            >
-              <AdditionalInfo
-                category={categories}
-                demo={project_demo}
-                github={github_repo}
-              />
-            </motion.div>
-            <motion.div
-              key="project-intro"
-              variants={fadeUp}
-              initial="hidden"
-              animate="visible"
-              transition={{ delay: 0.4, ...transition }}
-              className="col-span-7 lg:col-start-4"
-            >
-              <p className="font-display text-2xl text-neutral-800 dark:text-neutral-300 max-w-prose pb-0">
-                {excerpt.text}
-              </p>
-            </motion.div>
-          </InnerContainer>
+            <InnerContainer>
+              <motion.div
+                key="project-info-tab"
+                variants={fadeUp}
+                initial="hidden"
+                animate="visible"
+                transition={{ delay: 0.3, ...transition }}
+                className="col-span-full lg:col-span-3"
+              >
+                <AdditionalInfo
+                  category={categories}
+                  demo={project_demo}
+                  github={github_repo}
+                />
+              </motion.div>
+              <motion.div
+                key="project-intro"
+                variants={fadeUp}
+                initial="hidden"
+                animate="visible"
+                transition={{ delay: 0.4, ...transition }}
+                className="col-span-7 lg:col-start-4"
+              >
+                <p className="font-display text-2xl text-neutral-800 dark:text-neutral-300 max-w-prose pb-0">
+                  {excerpt.text}
+                </p>
+              </motion.div>
+            </InnerContainer>
           </div>
         </Container>
         {body ? <SliceItems key="project-body" slices={body} /> : null}

@@ -34,7 +34,7 @@ const Ingress = props => (
 )
 
 const Label = props => (
-   <motion.h2 {...props} className={`text-sm font-body font-medium leading-relaxed uppercase tracking-widest text-neutral-900 dark:text-neutral-100 ${props.className}`}>{props.children}</motion.h2>
+   <motion.h2 {...props} className={`text-xs font-sans font-semibold leading-relaxed uppercase tracking-wide text-neutral-800 dark:text-neutral-300 ${props.className}`}>{props.children}</motion.h2>
 )
 
 const Figcaption = props => (

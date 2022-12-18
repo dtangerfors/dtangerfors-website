@@ -22,7 +22,7 @@ const GridCard = ({ item, index }) => {
           {item.data.title.text}
         </h2>
         <p className="text-sm font-body text-neutral-800 dark:text-neutral-300">
-          {item.data.subtitle.text}
+        &raquo; {item.data.subtitle.text}
         </p>
       </div>
         {item.data.thumbnail_video.url ? (
