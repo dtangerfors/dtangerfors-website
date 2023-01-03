@@ -171,7 +171,7 @@ const AboutPage = ({ data }) => {
             </div>
           </header>
           <div className="mt-16 grid grid-cols-12 gap-12">
-            <div className="col-span-full md:col-end-9">
+            <div className="col-span-full lg:col-end-9">
               <Label
                 className="pb-8"
                 variants={fadeUp}
@@ -224,7 +224,7 @@ const AboutPage = ({ data }) => {
               </JobList>
             </div>
 
-            <div className="col-span-full md:col-start-9 flex flex-wrap gap-20">
+            <div className="col-span-full lg:col-start-9 flex flex-wrap gap-20">
               <div>
                 <Label
                 className="pb-8"

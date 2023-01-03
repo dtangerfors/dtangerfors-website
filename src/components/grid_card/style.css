@@ -4,7 +4,7 @@
 
 @layer components {
    .card {
-      @apply col-span-6 md:col-span-3 overflow-hidden  mb-12 lg:mb-40;
+      @apply col-span-6 lg:col-span-3 overflow-hidden  mb-12 lg:mb-40;
    }
 
    /* .card:first-child {
@@ -12,7 +12,7 @@
    } */
 
    .card:nth-child(9n + 1) {
-      @apply col-span-full md:col-span-9;
+      @apply col-span-full lg:col-span-9;
    }
 
    .card:nth-child(9n + 2) {
@@ -20,7 +20,7 @@
    }
 
    .card:nth-child(9n + 5) {
-      @apply md:col-span-6;
+      @apply lg:col-span-6;
    }
 
    .card-link {
