@@ -11,15 +11,15 @@
       @apply col-span-full;
    } */
 
-   .card:nth-child(9n + 1) {
+   .display-grid .card:nth-child(9n + 1) {
       @apply col-span-full lg:col-span-9;
    }
 
-   .card:nth-child(9n + 2) {
+   .display-grid .card:nth-child(9n + 2) {
       @apply self-end;
    }
 
-   .card:nth-child(9n + 5) {
+   .display-grid .card:nth-child(9n + 5) {
       @apply lg:col-span-6;
    }
 
@@ -31,7 +31,7 @@
       @apply relative w-full pt-[90%];
    }
 
-   .card:nth-child(9n + 1) .card-figure {
+   .display-grid .card:nth-child(9n + 1) .card-figure {
       @apply pt-[66.77%];
    }
 
