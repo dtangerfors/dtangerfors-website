@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 export const letterContainerVariants = {
   before: { transition: { staggerChildren: 0.35 } },
   after: {
-    transition: { staggerChildren: 0.035, delayChildren: 0.2 },
+    transition: { staggerChildren: 0.035, delayChildren: 0.3, },
   },
 }
 
@@ -13,7 +13,7 @@ export const letterContainerVariants = {
 export const letterVariants = {
   before: {
     opacity: 0,
-    y: 20,
+    y: 50,
     transition: {
       type: "spring",
       damping: 12,
@@ -42,7 +42,7 @@ export const AnimatedTitle = ({ children, text, textSize, color }) => {
       key={children}
       aria-label={children}
       aria-live={"polite"} // dont do this on production if it loops.
-      className={`${textSize} ${color} relative inline-block leading-tight font-sans font-normal z-10 break-words`}
+      className={`${textSize} ${color} relative inline-block leading-tight font-display font-normal italic z-10 break-words`}
     >
       {text.split(" ").map((word, wordI) => (
         <motion.span

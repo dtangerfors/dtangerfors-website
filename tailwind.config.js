@@ -4,10 +4,10 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      'body': 'kepler-std, -apple-system, serif',
-      'serif':'kepler-std, serif',
+      'body': 'aileron, -apple-system, sans-serif',
+      'serif':'marlide-display-variable, sans-serif',
       'sans': 'aileron, -apple-system, sans-serif',
-      'display': 'kepler-std-semicondensed-dis, serif'
+      'display': 'marlide-display-variable, sans-serif'
     },
     fontSize: {
       '0': '0',
@@ -18,7 +18,7 @@ module.exports = {
       'xl': 'clamp(2rem, 4vw, 2.4rem)',
       '2xl': 'clamp(2.5rem, 4vw, 3.6rem)',
       '3xl': 'clamp(3rem, 4vw, 4.8rem)',
-      'display': 'clamp(3.5rem, 8vw, 7rem)',
+      'display': 'clamp(3.5rem, 8vw, 10rem)',
     },
     extend: {
       maxWidth: {
@@ -26,7 +26,9 @@ module.exports = {
         'screen-92': '92vw',
       }, 
       colors: {
-        'black': '#0e0e0e'
+        // 'black': '#211e25',
+        'black': '#202025',
+        'primary': '#236bdc',
       }
     },
   },

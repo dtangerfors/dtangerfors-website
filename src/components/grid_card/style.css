@@ -28,7 +28,7 @@
    }
 
    .card-figure {
-      @apply relative w-full pt-[90%];
+      @apply relative w-full pt-[90%] rounded-2xl overflow-hidden;
    }
 
    .display-grid .card:nth-child(9n + 1) .card-figure {
@@ -44,6 +44,6 @@
    }
 
    .card-text {
-      @apply relative z-10 flex flex-col justify-end flex-wrap pb-8;
+      @apply relative z-10 flex flex-col justify-end flex-wrap p-8 bg-white rounded-2xl;
    }
 }

@@ -183,12 +183,12 @@ const SingleProject = ({ data }) => {
               key={title.text}
               aria-label={title.text}
               aria-live={"polite"} // dont do this on production if it loops.
-              className="relative inline-block text-3xl font-normal leading-tight max-w-full z-10 break-words text-neutral-50"
+              className="relative inline-block text-3xl font-display leading-tight max-w-full z-10 break-words text-neutral-50"
             >
               {title.text.split(" ").map((letter, letterI) => (
                 <motion.span
                   key={`letter-${letter}-${letterI}`}
-                  className="relative inline-block w-auto font-display italic text-[1.1em]"
+                  className="relative inline-block w-auto text-[1.1em]"
                   // Position elements
                   variants={letterVariants}
                 >
@@ -205,7 +205,7 @@ const SingleProject = ({ data }) => {
               {subtitle.text.split(" ").map((letter, letterI) => (
                 <motion.span
                   key={`letter-${letter}-${letterI}`}
-                  className="relative inline-block w-auto font-sans"
+                  className="relative inline-block w-auto font-bold"
                   // Position elements
                   variants={letterVariants}
                 >

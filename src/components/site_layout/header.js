@@ -7,17 +7,16 @@ import Nav from "../Nav"
 
 
 const NavLink = ({children, to}) => (
-  <Link to={to} className="font-sans text-sm uppercase tracking-widest no-underline mx-4 leading-[4rem] text-black dark:text-white hover:underline">{children}</Link>
+  <Link to={to} className="font-sans text-sm uppercase tracking-widest no-underline mr-8 leading-[2rem] text-black dark:text-white hover:text-neutral-500">{children}</Link>
 )
 
 const Header = ({ siteTitle }) => {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="fixed flex justify-between top-0 left-0 w-full z-50 p-4 px-8 px-safe">
-      <div className="flex justify-end items-center w-full max-w-screen-2xl mx-auto">
-        <Link to="/" className="m-0 mr-auto rounded-full text-0">
-          <svg className="w-12 fill-neutral-900 dark:fill-neutral-50" viewBox="0 0 283.5 283.5">
+    <header className="sticky grid gap-8 grid-cols-12 top-0 left-0 w-full z-50 p-2 px-8 bg-white dark:bg-black">
+        <Link to="/" className="m-0 rounded-full text-0">
+          <svg className="w-8 fill-neutral-900 dark:fill-neutral-50" viewBox="0 0 283.5 283.5">
             <path
               d="M237.5,38.2c-57.2-52.4-146.5-48.8-198.9,8c-52.6,56.9-49,146.2,8,198.9l0.1,0.1c28,24.6,60.1,37.1,95.8,37.1
 	c11,0,22.3-1.3,34.2-3.8l3-0.6c2.2-0.4,3.6-2.6,3.2-4.8l-1.3-6.1c-0.6-2.2-2.8-3.6-4.9-3.2l-3,0.6c-44.8,9.1-84.2-1-117.2-30.1
@@ -34,13 +33,15 @@ const Header = ({ siteTitle }) => {
           </svg>
           {siteTitle}
         </Link>
-        <div className="hidden self-stretch lg:flex">
+      <div className="col-start-4">
           <NavLink to="/work">Work</NavLink>
           <NavLink to="/resources">Resources</NavLink>
           <NavLink to="/about">About</NavLink>
-        </div>
-        <Hamburger open={open} setOpen={setOpen} />
       </div>
+      <div className="col-start-12 justify-self-end">
+      <Hamburger open={open} setOpen={setOpen} />
+      </div>
+        
 
       <Nav open={open} setOpen={setOpen} />
     </header>

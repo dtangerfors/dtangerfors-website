@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import { bool } from "prop-types"
 
 import Arrow from "./Arrow"
-import { ContactOption, ContactWrapper } from "./about/contact"
+import { ContactOption, ContactBlockWrapper } from "./about/contact"
 
 const NavItem = props => (
   <motion.li
@@ -13,7 +13,7 @@ const NavItem = props => (
       y: props.open ? 0 : 30,
       opacity: props.open ? 1 : 0,
     }}
-    className="relative border-b border-neutral-900/10 dark:border-white/30 mb-12 last:mb-0 py-6"
+    className="relative mb-12 last:mb-0 py-6"
   >
     {props.children}
   </motion.li>
@@ -23,12 +23,9 @@ const NavLink = props => (
   <Link
     to={props.to}
     title={props.title}
-    className="group block font-display text-3xl font-thin leading-none text-black dark:text-white"
+    className="group block font-display text-3xl font-light leading-none text-black dark:text-white after:inline-block after:content-['\2192'] after:font-display"
   >
-    {props.children}{" "}
-    <Arrow
-      style={{ transform: "rotate(45deg)", top: "1.3rem", right: "1rem" }}
-    />{" "}
+    {props.children}
   </Link>
 )
 
@@ -41,11 +38,11 @@ const Nav = ({ open }) => (
     animate={{
       y: open ? 0 : "-100%",
     }}
-    transition={{ delay: open ? 0 : 1, type: "tween", duration: 0.4 }}
+    transition={{ delay: open ? 0 : 1, type: "tween", duration: 0.8 }}
     className="fixed inset-0 -z-[1] w-screen h-screen bg-white dark:bg-black p-8 pb-safe px-safe"
   >
-    <div className="max-w-screen-2xl mx-auto w-full h-full flex flex-col">
-    <ul className="flex flex-col pt-20 lg:pt-40">
+    <div className="w-full h-full grid grid-cols-12 gap-8 pt-20 lg:pt-40">
+    <ul className="flex flex-col col-span-6 col-start-4">
       <NavItem
         open={open}
         transition={{
@@ -86,8 +83,8 @@ const Nav = ({ open }) => (
         </NavLink>
       </NavItem>
     </ul>
-    <div className="mt-auto">
-      <ContactWrapper>
+    <div className="relative col-span-3">
+      <ContactBlockWrapper>
         <ContactOption
           animate = {{
             y: open ? 0 : 30,
@@ -140,7 +137,7 @@ const Nav = ({ open }) => (
           <i className="ri-at-line"></i>{" "}
           <span className="pl-2">daniel@dtangerfors.se</span>
         </ContactOption>
-      </ContactWrapper>
+      </ContactBlockWrapper>
     </div>
     </div>
   </motion.nav>
