@@ -9,7 +9,7 @@ const JobList = props => (
 )
 
 const JobItem = props => (
-   <li className="w-full bg-neutral-200 dark:bg-neutral-900 p-12 rounded-[1rem]">
+   <li className="w-full border-b border-black dark:border-white pb-12">
       <AnimationWrapper>
          <motion.div {...props}>
          {props.children}

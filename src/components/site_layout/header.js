@@ -5,18 +5,26 @@ import React, { useState } from "react"
 import Hamburger from "../Hamburger"
 import Nav from "../Nav"
 
-
-const NavLink = ({children, to}) => (
-  <Link to={to} className="font-sans text-sm uppercase tracking-widest no-underline mr-8 leading-[2rem] text-black dark:text-white hover:text-neutral-500">{children}</Link>
+const NavLink = ({ children, to }) => (
+  <Link
+    to={to}
+    className="font-sans text-xs uppercase tracking-widest no-underline mr-8 leading-[2rem] text-black dark:text-white hover:text-neutral-500"
+  >
+    {children}
+  </Link>
 )
 
-const Header = ({ siteTitle }) => {
+const Header = ({ siteTitle, projectTitle }) => {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="sticky grid gap-8 grid-cols-12 top-0 left-0 w-full z-50 p-2 px-8 bg-white dark:bg-black">
+    <header className="fixed top-0 left-0 w-full z-50 px-8 bg-white dark:bg-black">
+      <div className="grid gap-8 grid-cols-12 py-6 lg:py-2 items-center">
         <Link to="/" className="m-0 rounded-full text-0">
-          <svg className="w-8 fill-neutral-900 dark:fill-neutral-50" viewBox="0 0 283.5 283.5">
+          <svg
+            className="w-10 fill-neutral-900 dark:fill-neutral-50"
+            viewBox="0 0 283.5 283.5"
+          >
             <path
               d="M237.5,38.2c-57.2-52.4-146.5-48.8-198.9,8c-52.6,56.9-49,146.2,8,198.9l0.1,0.1c28,24.6,60.1,37.1,95.8,37.1
 	c11,0,22.3-1.3,34.2-3.8l3-0.6c2.2-0.4,3.6-2.6,3.2-4.8l-1.3-6.1c-0.6-2.2-2.8-3.6-4.9-3.2l-3,0.6c-44.8,9.1-84.2-1-117.2-30.1
@@ -33,17 +41,20 @@ const Header = ({ siteTitle }) => {
           </svg>
           {siteTitle}
         </Link>
-      <div className="col-start-4">
+        <div className="col-start-4 col-span-4 hidden lg:block">
           <NavLink to="/work">Work</NavLink>
+          {projectTitle && <span className="font-sans text-xs uppercase tracking-widest no-underline -ml-6 leading-[2rem] text-black dark:text-white"><i className="ri-arrow-right-line align-bottom"></i> {projectTitle}</span>}
+        </div>
+        <div className="col-start-12 justify-self-end hidden lg:block">
           <NavLink to="/resources">Resources</NavLink>
           <NavLink to="/about">About</NavLink>
-      </div>
-      <div className="col-start-12 justify-self-end">
-      <Hamburger open={open} setOpen={setOpen} />
-      </div>
-        
+        </div>
+        <div className="col-start-12 justify-self-end block lg:hidden">
+          <Hamburger open={open} setOpen={setOpen} />
+        </div>
 
-      <Nav open={open} setOpen={setOpen} />
+        <Nav open={open} setOpen={setOpen} />
+      </div>
     </header>
   )
 }

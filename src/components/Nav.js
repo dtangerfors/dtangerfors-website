@@ -3,7 +3,6 @@ import { motion } from "framer-motion"
 import { Link } from "gatsby"
 import { bool } from "prop-types"
 
-import Arrow from "./Arrow"
 import { ContactOption, ContactBlockWrapper } from "./about/contact"
 
 const NavItem = props => (
@@ -23,7 +22,7 @@ const NavLink = props => (
   <Link
     to={props.to}
     title={props.title}
-    className="group block font-display text-3xl font-light leading-none text-black dark:text-white after:inline-block after:content-['\2192'] after:font-display"
+    className="group block font-display text-3xl font-light leading-none text-black dark:text-white hover:text-primary"
   >
     {props.children}
   </Link>
@@ -39,10 +38,10 @@ const Nav = ({ open }) => (
       y: open ? 0 : "-100%",
     }}
     transition={{ delay: open ? 0 : 1, type: "tween", duration: 0.8 }}
-    className="fixed inset-0 -z-[1] w-screen h-screen bg-white dark:bg-black p-8 pb-safe px-safe"
+    className="fixed inset-0 -z-[1] w-screen h-screen bg-white dark:bg-black p-8 pb-safe px-safe supports-[height:100cqh]:h-[100cqh] supports-[height:100svh]:h-[100svh]"
   >
-    <div className="w-full h-full grid grid-cols-12 gap-8 pt-20 lg:pt-40">
-    <ul className="flex flex-col col-span-6 col-start-4">
+    <div className="w-full h-full flex flex-col lg:flex-row lg:grid lg:grid-cols-12 gap-8 pt-20 lg:pt-40">
+    <ul className="flex flex-col flex-1 lg:col-span-6 lg:col-start-4">
       <NavItem
         open={open}
         transition={{

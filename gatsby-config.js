@@ -47,9 +47,9 @@ module.exports = {
         short_name: `starter`,
         start_url: `/`,
         background_color: `#000`,
-        theme_color: `#f7f7f7`,
+        theme_color: `#fff`,
         display: `minimal-ui`,
-        icon: `src/images/dtangerfors-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/icon.svg`, // This path is relative to the root of the site.
       },
     },
     {

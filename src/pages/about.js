@@ -5,7 +5,7 @@ import Layout from "../components/site_layout/layout"
 import Seo from "../components/seo"
 import { H3, Ingress, Label, Paragraph } from "../components/typography"
 import { AnimatedTitle } from "../components/AnimatedTitle"
-import aboutImage from "../images/daniel-tangerfors-profilbild.jpg"
+import aboutImage from "../images/daniel-tangerfors-profilbild-blue.jpg"
 import { blobAnimation, blobTransition } from "../components/Blob"
 import { ContactOption, ContactWrapper } from "../components/about/contact"
 import { fadeUp, fadeUpList, transition, fadeUpItem } from "../animation"
@@ -97,7 +97,7 @@ const AboutPage = ({ data }) => {
       <Seo title="About me" />
       <AnimatePresence>
         <section className="max-w-screen-xl mx-auto px-safe lg:px-12 xl:px-20 pt-40 lg:pt-60">
-          <header className="grid grid-cols-12 pb-16 border-b border-neutral-900/10 dark:border-white/30">
+          <header className="grid grid-cols-12 pb-16 border-b border-black dark:border-white">
             <div className="col-span-full lg:col-end-9 lg:pr-12 order-2 lg:order-first">
               <Label
                 variants={fadeUp}
@@ -171,7 +171,7 @@ const AboutPage = ({ data }) => {
             </div>
           </header>
           <div className="mt-16 grid grid-cols-12 gap-12">
-            <div className="col-span-full lg:col-end-9">
+            <div className="relative col-span-full lg:col-end-9">
               <Label
                 className="pb-8"
                 variants={fadeUp}
@@ -222,9 +222,10 @@ const AboutPage = ({ data }) => {
                   </JobItem>
                 ))}
               </JobList>
+              <div className="absolute w-px h-full top-0 -right-6 border-r border-black dark:border-white"></div>
             </div>
 
-            <div className="col-span-full lg:col-start-9 flex flex-wrap gap-20">
+            <div className="col-span-full lg:col-start-9 flex flex-wrap gap-12">
               <div>
                 <Label
                 className="pb-8"

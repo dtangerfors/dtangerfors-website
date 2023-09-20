@@ -6,7 +6,7 @@ const H1 = props => (
 )
 
 const H2 = props => (
-   <motion.h2 {...props} className={`font-sans text-2xl font-normal leading-tight text-black dark:text-neutral-200 pt-[1em] first:pt-0 pb-[.3em]`}>{props.children}</motion.h2>
+   <motion.h2 {...props} className={`font-sans text-2xl font-normal leading-tight text-black dark:text-neutral-200 pt-[1em] first:pt-0 pb-[.3em] ${props.className}`}>{props.children}</motion.h2>
 )
 
 const H3 = props => (

@@ -5,13 +5,14 @@ import { Helmet } from "react-helmet"
 
 // Components
 import Layout from "../components/site_layout/layout"
-import { Container, InnerContainer } from "../components/site_layout/containers"
+import { Container } from "../components/site_layout/containers"
 import Seo from "../components/seo"
 import { AnimatedTitle } from "../components/AnimatedTitle"
 import { fadeUp, transition } from "../animation"
 import meta_card from "../images/juice-meta-card.jpg"
 import GridCard from "../components/grid_card"
-import Blob from "../components/blob-circle"
+
+import bgImage from "../images/gradient-bg-blue.webp"
 
 // Query
 export const query = graphql`
@@ -85,63 +86,44 @@ const IndexPage = ({ data }) => {
       </Helmet>
       <AnimatePresence>
         <div className="">
-          <header className="relative min-h-[55vh] lg:min-h-[80vh] w-full flex items-center justify-center text-center p-8 bg-black overflow-hidden">
-            <div className="relative z-10 w-full max-w-screen-md">
+          <header className="relative flex flex-col min-h-screen w-full p-8 pt-32 lg:p-20 lg:pt-40 overflow-hidden supports-[min-height:100cqh]:min-h-[100cqh] supports-[min-height:100svh]:min-h-[100svh]">
+            <div className="relative z-10 w-full max-w-screen-sm">
               <AnimatedTitle
-                text="Daniel. Frontend developer. Designer."
+                text="Digital designer who thinks in code"
                 textSize="text-display"
-                color="text-primary"
+                color="text-white"
                 key="index-tite"
               />
-             
             </div>
-            <Blob />
-            <div className="absolute z-40 w-full h-full inset-0 mix-blend-difference">
-              {/* <img src={bgImage} alt=""  class="w-full h-full object-cover"/> */}
-              {/* <motion.div
-                key="blob-1"
-                animate={{
-                  rotate: 360,
-                }}
-                transition={{ ease: "easeOut", duration: 20, repeat: Infinity }}
-                style={{
-                  borderRadius: "36% 64% 60% 40% / 57% 53% 47% 43%",
-                  transform: "translate(-50%, 50%)",
-                }}
-                className="absolute w-[100vw] h-[100vw] bottom-0 left-1/2 bg-primary"
-              ></motion.div> */}
+            <div className="max-w-screen-md mt-auto self-end">
+            <motion.p
+              key="index-subtitle"
+              className="text-xl font-body font-normal leading-relaxed text-white"
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: 0.3, ...transition }}
+              >
+              Welcome to my page. Originally a photographer, turned graphic
+              designer who now does frontend development. View my work below.
+            </motion.p>
+              </div>
+            <div className="absolute -z-10 w-full h-full inset-0">
+              <img src={bgImage} alt="" class="w-full h-full object-cover" />
             </div>
           </header>
           <Container>
-            <InnerContainer>
-              <div className="col-span-full text-center">
-              <motion.p
-                key="index-subtitle"
-                className="text-xl font-body font-normal leading-relaxed max-w-screen-md mt-8 mx-auto text-primary"
-                variants={fadeUp}
-                initial="hidden"
-                animate="visible"
-                transition={{ delay: 0.3, ...transition }}
-              >
-                Welcome to my page. Originally a photographer, turned graphic
-                designer who now does frontend development. View my work below.
-              </motion.p>
-              </div>
-            
-            </InnerContainer>
-            </Container>
-          <Container>
-              <div className="display-grid grid grid-cols-12 grid-rows-[auto] col-span-full gap-4 md:gap-8">
-                {projects.map((project, i) => {
-                  return (
-                    <GridCard
-                      item={project.node}
-                      index={i}
-                      key={`project-${i}`}
-                    />
-                  )
-                })}
-              </div>
+            <div className="display-grid grid grid-cols-12 grid-rows-[auto] col-span-full gap-4 md:gap-8 md:gap-y-4">
+              {projects.map((project, i) => {
+                return (
+                  <GridCard
+                    item={project.node}
+                    index={i}
+                    key={`project-${i}`}
+                  />
+                )
+              })}
+            </div>
           </Container>
         </div>
       </AnimatePresence>

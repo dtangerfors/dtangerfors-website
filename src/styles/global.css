@@ -54,7 +54,7 @@ html {
 }
 
 body {
-  @apply bg-neutral-100 dark:bg-black;
+  @apply relative bg-white dark:bg-black;
 }
 
 *,

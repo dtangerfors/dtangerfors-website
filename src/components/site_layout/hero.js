@@ -3,12 +3,12 @@ import { AnimatedTitle } from "../AnimatedTitle"
 
 const Hero = ({ children, title }) => (
   <>
-  <header className="flex items-end min-h-[30vh] lg:min-h-[45vh] p-8 px-safe bg-neutral-200 dark:bg-neutral-900">
-    <div className="grid grid-cols-12 gap-8 w-full grid-flow-col">
-      <div className="col-start-4 col-span-8">
+  <header className="p-8 px-safe bg-neutral-100 dark:bg-neutral-800 overflow-hidden">
+    <div className="flex flex-col min-h-[30vh] lg:min-h-[45vh] pt-24">
+      <div className="col-start-4 col-span-8 pb-12">
         <AnimatedTitle text={title.text} textSize="text-display" color="text-black dark:text-white"/>
       </div>
-      {children ? <div className="col-start-6 col-span-6">{children}</div> : null}
+      {children ? <div className="max-w-screen-md mt-auto self-end">{children}</div> : null}
     </div>
   </header>
   
