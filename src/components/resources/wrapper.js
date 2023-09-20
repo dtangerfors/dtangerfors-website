@@ -16,7 +16,7 @@ const ResourceContent = ({ resources }) => {
              initial="hidden"
              animate="visible"
              variants={fadeUpList}
-             className="grid lg:grid-cols-3 gap-12 mt-40 first:mt-0 pb-16 border-b border-neutral-900/10 dark:border-white/30"
+             className="grid lg:grid-cols-3 gap-8 mt-40 first:mt-0"
            >
               <motion.header 
                variants={fadeUpItem}

@@ -1,0 +1,36 @@
+.blob {
+   @apply absolute z-10 w-full h-full inset-0 mix-blend-difference;
+}
+
+.blob-inner {
+   @apply absolute bg-primary -translate-x-1/2;
+   border-radius: 50%;
+  }
+  
+  .blob-large {
+    @apply w-[95vw] h-[95vw] bottom-0 left-1/4;
+    transform: translateY(60%) translateX(-50%);
+    animation: bounce-lg .6s backwards;
+    animation-delay: .3s;
+    transform-origin: bottom left;
+}
+
+.blob-small {
+  @apply w-[50vw] h-[50vw] top-0 right-0;
+  transform: translateY(-60%);
+  animation: bounce-sm .7s backwards;
+  transform-origin: top center;
+  animation-delay: .3s
+}
+
+ @keyframes bounce-lg {
+   0%   { transform: scale(0) translateY(60%) translateX(-50%)}
+  
+   100% { transform: scale(1) translateY(60%) translateX(-50%)}
+}
+
+ @keyframes bounce-sm {
+   0%   { transform: scale(0) translateY(-60%)}
+  
+   100% { transform: scale(1) translateY(-60%)}
+}

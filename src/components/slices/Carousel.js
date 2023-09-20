@@ -12,7 +12,6 @@ import "../../styles/swiper.css"
 const Carousel = ({ slice }) => {
   return (
     <Container>
-        <div className="-mb-8 pb-8 border-b border-neutral-900/10 dark:border-white/30">
         <InnerContainer>
           <div className="col-span-7 lg:col-start-4">
             <Swiper
@@ -50,7 +49,6 @@ const Carousel = ({ slice }) => {
             </Swiper>
           </div>
         </InnerContainer>
-    </div>
       </Container>
   )
 }

@@ -5,7 +5,7 @@
 /* Swiper Buttons */
 .swiper-button-prev,
 .swiper-button-next {
-  @apply absolute hidden md:block z-10 top-1/2 -translate-y-1/2 w-20 h-20 p-2 bg-neutral-50 dark:bg-black rounded-full transition-all duration-300;
+  @apply absolute hidden md:block z-10 top-1/2 -translate-y-1/2 w-20 h-20 p-2 bg-white dark:bg-black rounded-full transition-all duration-300;
 }
 
 .swiper-button-prev {
@@ -32,7 +32,7 @@
 
 /* Swiper Pagination */
 .swiper-pagination {
-   @apply absolute bottom-0 flex translate-y-1/2 bg-neutral-50 dark:bg-black rounded-full p-4;
+   @apply absolute bottom-0 flex translate-y-1/2 bg-white dark:bg-black rounded-full p-4;
 }
 
 .swiper-pagination-bullet {

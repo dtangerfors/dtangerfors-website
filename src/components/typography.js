@@ -2,23 +2,23 @@ import React from "react"
 import { motion } from "framer-motion"
 
 const H1 = props => (
-   <motion.h1 {...props} className={`font-sans text-3xl font-normal leading-tight text-black dark:text-neutral-200 pt-[1em] pb-[.3em]`}>{props.children}</motion.h1>
+   <motion.h1 {...props} className={`font-sans text-3xl font-normal leading-tight text-black dark:text-neutral-200 pt-[1em] first:pt-0 pb-[.3em]`}>{props.children}</motion.h1>
 )
 
 const H2 = props => (
-   <motion.h2 {...props} className={`font-sans text-2xl font-normal leading-tight text-black dark:text-neutral-200 pt-[1em] pb-[.3em]`}>{props.children}</motion.h2>
+   <motion.h2 {...props} className={`font-sans text-2xl font-normal leading-tight text-black dark:text-neutral-200 pt-[1em] first:pt-0 pb-[.3em] ${props.className}`}>{props.children}</motion.h2>
 )
 
 const H3 = props => (
-   <motion.h3 {...props} className={`font-sans text-xl font-normal leading-tight text-black dark:text-neutral-200 pt-[1em] pb-[.3em] ${props.className}`}>{props.children}</motion.h3>
+   <motion.h3 {...props} className={`font-sans text-xl font-normal leading-tight text-black dark:text-neutral-200 pt-[1em] first:pt-0 pb-[.3em] ${props.className}`}>{props.children}</motion.h3>
 )
 
 const H4 = props => (
-   <motion.h4 {...props} className={`font-sans text-lg font-normal leading-tight text-black dark:text-neutral-200 pt-[1em] pb-[.3em] ${props.className}`}>{props.children}</motion.h4>
+   <motion.h4 {...props} className={`font-sans text-lg font-normal leading-tight text-black dark:text-neutral-200 pt-[1em] first:pt-0 pb-[.3em] ${props.className}`}>{props.children}</motion.h4>
 )
 
 const Paragraph = props => (
-   <motion.p {...props} className={`text-lg font-body font-light leading-relaxed text-neutral-800 dark:text-neutral-400 pb-[.8em] ${props.className}`}>{props.children}</motion.p>
+   <motion.p {...props} className={`text-base font-body font-light leading-relaxed text-neutral-800 dark:text-neutral-400 pb-[.8em] ${props.className}`}>{props.children}</motion.p>
 )
 
 const Ul = props => (

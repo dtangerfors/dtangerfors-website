@@ -3,9 +3,9 @@ import { motion } from "framer-motion"
 
 // Add staggering effect to the children of the container
 export const letterContainerVariants = {
-  before: { transition: { staggerChildren: 0.35 } },
+  before: { transition: { staggerChildren: 0.5 } },
   after: {
-    transition: { staggerChildren: 0.035, delayChildren: 0.2 },
+    transition: { staggerChildren: 0.035, delayChildren: 0.3 },
   },
 }
 
@@ -13,7 +13,7 @@ export const letterContainerVariants = {
 export const letterVariants = {
   before: {
     opacity: 0,
-    y: 20,
+    y: 75,
     transition: {
       type: "spring",
       damping: 12,
@@ -32,7 +32,6 @@ export const letterVariants = {
 }
 
 export const AnimatedTitle = ({ children, text, textSize, color }) => {
-
   return (
     <motion.h1
       variants={letterContainerVariants}
@@ -42,17 +41,19 @@ export const AnimatedTitle = ({ children, text, textSize, color }) => {
       key={children}
       aria-label={children}
       aria-live={"polite"} // dont do this on production if it loops.
-      className={`${textSize} ${color} relative inline-block leading-tight font-sans font-normal z-10 break-words`}
+      className={`${textSize} ${color} relative inline-block leading-tight font-display font-normal italic z-10 break-words overflow-hidden`}
     >
       {text.split(" ").map((word, wordI) => (
-        <motion.span
-          key={`word-${word}-${wordI}`}
-          className="relative inline-block w-auto"
-          // Position elements
-          variants={letterVariants}
-        >
-          {word === " " ? "\u00A0" : `${word}\u00A0`}
-        </motion.span>
+        <span className="leading-none overflow-hidden">
+          <motion.span
+            key={`word-${word}-${wordI}`}
+            className="relative inline-block w-auto"
+            // Position elements
+            variants={letterVariants}
+          >
+            {word === " " ? "\u00A0" : `${word}\u00A0`}
+          </motion.span>
+        </span>
       ))}
     </motion.h1>
   )

@@ -1,7 +1,7 @@
 
 import React from "react"
 import {motion} from "framer-motion"
-import blob from '../images/pride-gradient.jpg'
+import blob from '../images/gradient-bg-blue.webp'
 
 export const blobTransition = {
   duration: 1.2,

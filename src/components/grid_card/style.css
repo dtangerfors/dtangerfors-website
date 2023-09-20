@@ -4,7 +4,7 @@
 
 @layer components {
    .card {
-      @apply col-span-6 lg:col-span-3 overflow-hidden  mb-12 lg:mb-40;
+      @apply col-span-6 lg:col-span-3 mb-12 lg:mb-40;
    }
 
    /* .card:first-child {
@@ -44,6 +44,6 @@
    }
 
    .card-text {
-      @apply relative z-10 flex flex-col justify-end flex-wrap pb-8;
+      @apply relative z-10 flex flex-col justify-end flex-wrap pb-10;
    }
 }

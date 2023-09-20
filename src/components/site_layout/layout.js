@@ -7,13 +7,16 @@ import Header from "./header"
 
 const Footer = () => (
   <footer className="p-8 px-safe">
-    <div className="w-full max-w-screen-2xl border-t border-neutral-900/10 dark:border-white/30 mx-auto">
+    <div className="w-full max-w-screen-2xl border-t border-black dark:border-white mx-auto">
       <div className="flex items-center justify-between pt-8">
         <div className="flex items-center">
-        <Link to="/">
-          <svg className="w-8 fill-neutral-900 dark:fill-neutral-50" viewBox="0 0 283.5 283.5">
-            <path
-              d="M237.5,38.2c-57.2-52.4-146.5-48.8-198.9,8c-52.6,56.9-49,146.2,8,198.9l0.1,0.1c28,24.6,60.1,37.1,95.8,37.1
+          <Link to="/">
+            <svg
+              className="w-8 fill-neutral-900 dark:fill-neutral-50"
+              viewBox="0 0 283.5 283.5"
+            >
+              <path
+                d="M237.5,38.2c-57.2-52.4-146.5-48.8-198.9,8c-52.6,56.9-49,146.2,8,198.9l0.1,0.1c28,24.6,60.1,37.1,95.8,37.1
   c11,0,22.3-1.3,34.2-3.8l3-0.6c2.2-0.4,3.6-2.6,3.2-4.8l-1.3-6.1c-0.6-2.2-2.8-3.6-4.9-3.2l-3,0.6c-44.8,9.1-84.2-1-117.2-30.1
   C5.4,187.2,2.3,107.2,49.3,56C96.3,5,176.4,1.9,228,48.9c46.5,42.7,45.6,104,30.7,143.4c-10,26.4-27.1,45.1-41.6,45.5
   c-11.6-0.3-33.9-8.4-55.1-59.7c-0.9-2.2-1.7-4.3-2.6-6.5c0.4-1.3,0.7-2.5,0.9-3.5c0.3-1.3,0.7-3.6,1.4-6.5
@@ -24,23 +27,26 @@ const Footer = () => (
   c12.6,0,24.8-13.6,32.7-25.1c3-4.5,5.9-9.1,8.4-13.8c22.6,50.7,48,62,65.6,62.3h0.1h0.1c20.9-0.4,42.4-22,54.9-54.9
   C288.5,153.7,289.4,85.9,237.5,38.2z M150.5,144.4c-6.8-24.9-10.7-51.3-10.6-72.7c0.3-23,5.4-31.6,8.5-31.6c2.6,0,4.5,0.9,6.1,2.9
   C165.5,56.8,159.2,103.1,150.5,144.4z"
-            />
-          </svg>
-        </Link>
-        <p className="font-body text-sm leading-none flex items-center ml-4 text-neutral-600 dark:text-neutral-300">
-          &copy; {new Date().getFullYear()} All rights reserved.
-        </p>
+              />
+            </svg>
+          </Link>
+          <p className="font-body text-sm leading-none flex items-center ml-4 text-neutral-600 dark:text-neutral-300">
+            &copy; {new Date().getFullYear()} All rights reserved.
+          </p>
         </div>
-        
-        <Link className="font-body text-sm leading-none flex items-center ml-4 text-neutral-600 dark:text-neutral-300" to="/integritetspolicy">
-        Integritetspolicy
-      </Link>
+
+        <Link
+          className="font-body text-sm leading-none flex items-center ml-4 text-neutral-600 dark:text-neutral-300"
+          to="/integritetspolicy"
+        >
+          Integritetspolicy
+        </Link>
       </div>
     </div>
   </footer>
 )
 
-const Layout = ({ children }) => {
+const Layout = ({ children, projectTitle }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -55,14 +61,11 @@ const Layout = ({ children }) => {
     <>
       <Helmet>
         <link rel="stylesheet" href="https://use.typekit.net/wdd3eii.css" />
-        {/* <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,400,300,900&display=swap" rel="stylesheet" /> */}
-        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"></link>
-        <meta
-          name="viewport"
-          content="initial-scale=1, viewport-fit=cover"
-        ></meta>
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+        <meta name="viewport" content="initial-scale=1, viewport-fit=cover" />
       </Helmet>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteTitle={data.site.siteMetadata.title} projectTitle={projectTitle} />
       <div className="relative min-h-screen">
         <main className="relative w-full min-h-screen pb-40 overflow-hidden">
           {children}
