@@ -151,12 +151,15 @@ const letterContainerVariants = {
 
 const SingleProject = ({ data }) => {
   const [opacity, setOpacity] = useState(1);
+  const [windowHeight, setWindowHeight] = useState(1);
   const pictureRef = useRef(null);
-  const pictureHeight = window.innerHeight;
   
   useEffect(() => {
+    const pictureHeight = window.innerHeight;
     const range = 200;
     const offset = pictureHeight / 3;
+
+    setWindowHeight(pictureHeight)
     
     const didScrollPage = e => {
       let calc = 1 - (window.scrollY - offset + range) / range;
@@ -259,7 +262,7 @@ const SingleProject = ({ data }) => {
             key="header-figure"
             className="fixed w-full -z-10 inset-0"
             ref={pictureRef}
-            style={{ opacity: opacity, height: pictureHeight }}
+            style={{ opacity: opacity, height: windowHeight }}
           >
             <GatsbyImage
               image={image}
